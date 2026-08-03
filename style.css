@@ -539,16 +539,23 @@
     .reg{display:none;}
     body{border-top-width:6px;}
 
-    /* masthead: brand row + swipeable nav, language toggle pinned */
-    .masthead{gap:8px;position:relative;}
+    /* masthead: one clean brand row, then a ruled swipe nav */
+    header{padding:12px 0 0;}
+    .frame header.stuck,header.stuck{padding:8px 0 0;}
+    .masthead{gap:0;position:relative;}
     .masthead > .smallcaps:last-child{display:none;}
+    .masthead .brand{width:100%;gap:10px;padding-right:88px;min-height:32px;}
+    .masthead .brand img{width:30px;height:30px;}
+    .masthead .brand .zh{font-size:20px;line-height:1;}
+    .masthead .brand .smallcaps{display:none;}
     .masthead .lang{position:absolute;top:2px;right:0;background:var(--paper);}
     .masthead nav{
-      width:100%;overflow-x:auto;gap:22px;padding:6px 0 8px;
+      width:100%;overflow-x:auto;gap:24px;padding:9px 0 11px;margin-top:10px;
+      border-top:1px solid var(--line);
       -webkit-overflow-scrolling:touch;scrollbar-width:none;
     }
     .masthead nav::-webkit-scrollbar{display:none;}
-    .masthead nav a{flex:none;padding:4px 0;}
+    .masthead nav a{flex:none;padding:2px 0;}
 
     /* hero becomes a column: 金狗 → the shrine → the pitch → CA */
     .hero{display:flex;flex-direction:column;padding:42px 0 52px;}
