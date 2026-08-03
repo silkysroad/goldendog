@@ -84,7 +84,7 @@
     var dir;
     if (f === TOKEN) dir = 'drop';           /* contract paying holders — the event */
     else if (t === PAIR) dir = 'in';         /* gold entering the pool (buys) */
-    else if (f === PAIR) dir = 'out';        /* gold leaving the pool (sells / tax route) */
+    else if (f === PAIR) dir = 'out';        /* gold leaving the pool (sells / reward route) */
     else dir = 'in';
     return {
       block: parseInt(l.blockNumber, 16),
