@@ -188,8 +188,10 @@
 
   /* ---------- hero plate parallax drift ---------- */
   var plate = document.querySelector(".hero-plate");
+  var deskMQ = window.matchMedia("(min-width: 901px)");
   if (plate && !REDUCED) {
     window.addEventListener("scroll", function () {
+      if (!deskMQ.matches) { plate.style.transform = ""; return; }
       var y = Math.min(window.scrollY, 700);
       plate.style.transform = "rotate(1.5deg) translateY(" + y * 0.06 + "px)";
     }, { passive: true });
