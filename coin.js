@@ -114,8 +114,13 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
     coin.add(tk);
   }
 
-  coin.rotation.x = 0.12;
-  scene.add(coin);
+  /* lay the coin flat — face up like a coin on a table, viewed from a raised angle */
+  var tilt = new THREE.Group();
+  tilt.rotation.x = -1.05;
+  tilt.add(coin);
+  scene.add(tilt);
+  camera.position.set(0, 0.35, 4.5);
+  camera.lookAt(0, 0, 0);
 
   /* pointer tilt */
   var tx = 0, ty = 0;
@@ -146,11 +151,14 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
     if (!visible) return;
     var t = clock.getElapsedTime();
     if (!REDUCED) {
-      coin.rotation.y = t * 0.55 + ty * 0.35;
-      coin.rotation.x = 0.12 + Math.sin(t * 0.8) * 0.05 + tx * 0.3;
-      coin.position.y = Math.sin(t * 1.1) * 0.045;
+      /* spin about the face axis — a coin turning flat on the table */
+      coin.rotation.z = t * 0.5;
+      /* slow precession wobble + pointer influence on the lay angle */
+      tilt.rotation.x = -1.05 + Math.sin(t * 0.7) * 0.06 + tx * 0.2;
+      tilt.rotation.z = Math.sin(t * 0.45) * 0.05 + ty * 0.15;
+      tilt.position.y = Math.sin(t * 1.1) * 0.045;
     } else {
-      coin.rotation.y = -0.45;
+      coin.rotation.z = -0.4;
     }
     renderer.render(scene, camera);
   }
