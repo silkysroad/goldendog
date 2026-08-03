@@ -275,6 +275,116 @@
   }
   .disclaimer{margin-top:26px;color:var(--ink-faint);font-size:12.5px;font-style:italic;max-width:72ch;}
 
+  /* ================================================================
+     THE $50K LAYER — grain, motion, live ticker, foil, preloader
+     ================================================================ */
+
+  /* paper grain */
+  .grain{
+    position:fixed;inset:0;z-index:90;pointer-events:none;
+    opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.05 0 0 0 0 0.05 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* reading progress — gold thread laid over the red band */
+  .progress{
+    position:fixed;top:0;left:0;height:4px;width:0%;
+    background:linear-gradient(90deg,var(--gold),var(--gold-bright));
+    z-index:160;transition:width .1s linear;
+  }
+
+  /* preloader — the seal stamps the page */
+  .preloader{
+    position:fixed;inset:0;z-index:200;background:var(--paper);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+    transition:opacity .55s ease,visibility .55s;
+  }
+  .preloader.done{opacity:0;visibility:hidden;}
+  body.locked{overflow:hidden;}
+  .pre-seal{
+    width:118px;height:118px;border:4px solid var(--red);color:var(--red);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-weight:900;font-size:44px;line-height:1.05;
+    transform:rotate(-6deg) scale(2.6);opacity:0;
+    animation:stamp .5s cubic-bezier(.25,.9,.3,1.25) .15s forwards;
+  }
+  .pre-cap{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.34em;
+    text-transform:uppercase;color:var(--ink-faint);
+    opacity:0;animation:fadeup .5s ease .55s forwards;
+  }
+  @keyframes stamp{
+    60%{transform:rotate(-6deg) scale(.94);opacity:1;}
+    100%{transform:rotate(-6deg) scale(1);opacity:1;}
+  }
+  @keyframes fadeup{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  /* sticky masthead */
+  header{
+    position:sticky;top:0;z-index:120;background:var(--paper);
+    transition:box-shadow .3s ease;
+  }
+  header.stuck{box-shadow:0 8px 24px -12px rgba(46,12,13,.28);}
+
+  /* live ticker */
+  .ticker{
+    border-bottom:1px solid var(--line);
+    margin:0 calc(0px - var(--pad,48px));padding:0 var(--pad,48px);
+    overflow:hidden;background:var(--paper-deep);
+  }
+  .ticker-track{
+    display:flex;white-space:nowrap;padding:9px 0;width:max-content;
+  }
+  .ticker.live .ticker-track{animation:marquee 36s linear infinite;}
+  .ticker.live .ticker-track:hover{animation-play-state:paused;}
+  .tgroup{display:inline-flex;align-items:center;}
+  .titem{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--ink-soft);padding:0 18px;
+  }
+  .titem b{font-weight:500;}
+  .titem b.up{color:var(--gold);}
+  .titem b.down{color:var(--red);}
+  .tsep{color:var(--gold);font-size:8px;display:flex;align-items:center;}
+  @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* scroll reveals */
+  .rv{opacity:0;transform:translateY(24px);
+    transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1);}
+  .rv.in{opacity:1;transform:none;}
+
+  /* bar chart growth */
+  .bar-chart .bar i{transition:width 1.1s cubic-bezier(.25,.8,.25,1);}
+
+  /* gold foil shimmer */
+  .foil{
+    background:linear-gradient(110deg,var(--gold) 38%,#F2D389 50%,var(--gold) 62%);
+    background-size:220% 100%;
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:var(--gold);
+    animation:foil 5.5s ease-in-out infinite;
+  }
+  @keyframes foil{0%,100%{background-position:110% 0;}50%{background-position:-10% 0;}}
+
+  /* micro-interactions */
+  .hero-plate{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease;will-change:transform;}
+  .hero-plate:hover{box-shadow:10px 12px 0 rgba(166,37,42,.24);}
+  .ca-bar button{transition:background .25s ease,color .25s ease,letter-spacing .25s ease;}
+  .ca-bar button:hover{letter-spacing:.3em;}
+  .ca-bar button:active{transform:translateY(1px);}
+  .foot-links a{transition:color .2s ease,padding-left .25s ease;}
+  .foot-links a:hover{padding-left:6px;}
+  .masthead nav a{transition:color .2s ease;}
+  .index .item{transition:background .3s ease;}
+  .index .item:hover{background:rgba(192,137,26,.06);}
+
+  @media(prefers-reduced-motion:reduce){
+    .rv{opacity:1;transform:none;transition:none;}
+    .ticker.live .ticker-track{animation:none;}
+    .foil{animation:none;}
+    .progress{transition:none;}
+  }
+
   .frame{--pad:48px;}
   @media(max-width:900px){
     .frame{padding:0 22px;--pad:22px;}
