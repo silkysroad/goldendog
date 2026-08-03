@@ -23,19 +23,35 @@
 <svg class="orn-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs>
     <path id="orn-ringpath" d="M100,22 a78,78 0 1,1 -0.01,0"/>
+    <clipPath id="orn-photo-clip"><circle cx="100" cy="100" r="54"/></clipPath>
   </defs>
 
-  <!-- the standing golden dog, paper-cut silhouette, curled tail -->
-  <symbol id="orn-dog" viewBox="0 0 100 68">
-    <path fill="currentColor" d="M5,23
-      L15,21 L19,17
-      L22,3 L32,13 L35,13 L43,2 L49,13
-      Q57,12 65,14 L74,17
-      Q81,19 82,26 L82,64 L74,64 L74,47
-      Q72,44 68,44 L45,44 L44,64 L36,64 L36,43
-      Q32,40 30,33 Q26,35 20,34 L8,33 Q5,32 5,27 Z
-      M74,12 a10,10 0 1,1 20,0.01 a10,10 0 1,1 -20,-0.01 Z
-      M79,12 a5,5 0 1,0 10,-0.01 a5,5 0 1,0 -10,0.01 Z"/>
+  <!-- the standing golden dog — shiba silhouette after Plate 01: long muzzle, pricked ears, chest ruff, tucked waist, tail curled on the back -->
+  <symbol id="orn-dog" viewBox="0 0 100 78">
+    <path fill="currentColor" d="M4,19
+      L13,12 L16,11
+      L18,1 L25,9
+      L28,9
+      L31,8 L36,0 L41,9
+      Q45,11 47,15
+      Q51,19 58,18
+      L72,17
+      Q82,18 86,23
+      L89,33
+      Q90,41 86,46
+      L89,59 L92,74 L85,74 L82,60 L79,50
+      L76,53 L76,74 L69,74 L70,51
+      Q62,46 54,47
+      L46,49
+      L45,74 L39,74 L38,51
+      L34,51
+      L33,74 L26,74 L25,51
+      Q24,42 22,36
+      Q18,29 12,27
+      Q6,26 3,24
+      Z
+      M68,15 a12,12 0 1,1 24,0.01 a12,12 0 1,1 -24,-0.01 Z
+      M75,10 a5,5 0 1,0 10,-0.01 a5,5 0 1,0 -10,0.01 Z"/>
   </symbol>
 
   <!-- the meander ring, set in actual 回 characters -->
@@ -52,7 +68,13 @@
   <!-- zodiac medallion: standing dog in the meander ring -->
   <symbol id="orn-zodiac" viewBox="0 0 200 200">
     <use href="#orn-ring" width="200" height="200"/>
-    <use href="#orn-dog" x="56" y="70" width="88" height="60"/>
+    <use href="#orn-dog" x="57" y="66" width="86" height="67"/>
+  </symbol>
+
+  <!-- the dog himself, Plate 01, struck into the meander ring -->
+  <symbol id="orn-photo-med" viewBox="0 0 200 200">
+    <use href="#orn-ring" width="200" height="200"/>
+    <image href="logo.png" x="46" y="46" width="108" height="108" preserveAspectRatio="xMidYMid slice" clip-path="url(#orn-photo-clip)"/>
   </symbol>
 
   <!-- the shiba chop face, line art, 狗 in the mouth -->
@@ -120,28 +142,38 @@
     </g>
   </symbol>
 
-  <!-- trotting dog nº2: raised front paw, floral cutouts, donut tail -->
-  <symbol id="orn-dog2" viewBox="0 0 100 70">
-    <path fill="currentColor" fill-rule="evenodd" d="
-      M5,23 L15,21 L19,17
-      L22,3 L32,13 L35,13 L43,2 L49,13
-      Q57,12 65,14 L74,17 Q81,19 82,26
-      L82,44
-      L88,62 L81,63 L74,46
-      Q71,44 68,44
-      L52,44 L53,64 L45,64 L44,44
-      L40,44
-      Q40,52 33,54 L32,49 Q35,48 35,44
-      L36,43 Q32,40 30,33 Q26,35 20,34 L8,33 Q5,32 5,27 Z
-      M74,12 a10,10 0 1,1 20,0.01 a10,10 0 1,1 -20,-0.01 Z
-      M79,12 a5,5 0 1,0 10,-0.01 a5,5 0 1,0 -10,0.01 Z
-      M69,29 a2.4,2.4 0 1,0 0.01,0 Z
-      M73,33 a2.4,2.4 0 1,0 0.01,0 Z
-      M65,33 a2.4,2.4 0 1,0 0.01,0 Z
-      M69,37 a2.4,2.4 0 1,0 0.01,0 Z
-      M55,28 a2.4,2.4 0 1,0 0.01,0 Z
-      M48,34 a2,2 0 1,0 0.01,0 Z
-      M59,37 a2,2 0 1,0 0.01,0 Z"/>
+  <!-- dog nº2: same shiba, one forepaw raised mid-trot, floral cutouts on shoulder & haunch -->
+  <symbol id="orn-dog2" viewBox="0 0 100 78">
+    <path fill="currentColor" d="M4,19
+      L13,12 L16,11
+      L18,1 L25,9
+      L28,9
+      L31,8 L36,0 L41,9
+      Q45,11 47,15
+      Q51,19 58,18
+      L72,17
+      Q82,18 86,23
+      L89,33
+      Q90,41 86,46
+      L89,59 L92,74 L85,74 L82,60 L79,50
+      L76,53 L76,74 L69,74 L70,51
+      Q62,46 54,47
+      L46,49
+      L46,55 Q45,63 38,63 L37,57 Q40,56 40,51
+      L34,51
+      L33,74 L26,74 L25,51
+      Q24,42 22,36
+      Q18,29 12,27
+      Q6,26 3,24
+      Z
+      M68,15 a12,12 0 1,1 24,0.01 a12,12 0 1,1 -24,-0.01 Z
+      M75,10 a5,5 0 1,0 10,-0.01 a5,5 0 1,0 -10,0.01 Z
+      M70,31 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M75,37 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M65,37 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M70,43 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M26,30 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M34,36 a2.5,2.5 0 1,0 5,-0.01 a2.5,2.5 0 1,0 -5,0.01 Z"/>
   </symbol>
 
   <!-- tick ring (stamp style) + zodiac medallion nº2 -->
@@ -156,10 +188,10 @@
   </symbol>
   <symbol id="orn-zodiac2" viewBox="0 0 200 200">
     <use href="#orn-ring2" width="200" height="200"/>
-    <use href="#orn-dog2" x="52" y="72" width="96" height="67"/>
-    <use href="#orn-blossom" x="88" y="42" width="24" height="24"/>
-    <use href="#orn-blossom" x="68" y="52" width="15" height="15" opacity=".8"/>
-    <use href="#orn-blossom" x="116" y="52" width="15" height="15" opacity=".8"/>
+    <use href="#orn-dog2" x="52" y="62" width="96" height="75"/>
+    <use href="#orn-blossom" x="88" y="34" width="24" height="24"/>
+    <use href="#orn-blossom" x="66" y="44" width="15" height="15" opacity=".8"/>
+    <use href="#orn-blossom" x="118" y="44" width="15" height="15" opacity=".8"/>
     <path d="M96,148 l4,-5 l4,5 l-4,5 Z" fill="currentColor"/>
   </symbol>
 
@@ -561,7 +593,7 @@
     <div class="sec-head">
       <span class="no">— III</span>
       <h3>The Gold Is Real</h3>
-      <span class="sec-medal"><svg><use href="#orn-zodiac"/></svg></span>
+      <span class="sec-medal"><svg><use href="#orn-photo-med"/></svg></span>
       <span class="zh-tag">真金</span>
     </div>
 
@@ -622,7 +654,7 @@
       <span class="yb-side" aria-hidden="true"><svg><use href="#orn-yuanbao-jin"/></svg></span>
       <span class="medal-wrap">
         <span class="medal-rays" aria-hidden="true"><svg><use href="#orn-rays"/></svg></span>
-        <span class="medal"><svg><use href="#orn-zodiac"/></svg></span>
+        <span class="medal"><svg><use href="#orn-photo-med"/></svg></span>
       </span>
       <span class="yb-side" aria-hidden="true"><svg><use href="#orn-yuanbao-jin"/></svg></span>
     </div>
@@ -679,8 +711,9 @@
       </div>
     </div>
 
-    <p class="fig-cap" style="margin-top:22px">Every row is a real XAUt transfer touching the golden dog's
-    pool, read by <b>your own browser</b> directly from BNB Chain. No backend. No indexer. No trust required.</p>
+    <p class="fig-cap" style="margin-top:22px">Every ounce above settled on BNB Chain before this page
+    heard about it. Check any row against <b>BscScan</b>. The dog keeps no books.
+    The chain keeps them for him. 链上为证.</p>
   </section>
 
   <!-- ================= CHART ================= -->
@@ -703,7 +736,7 @@
       <div>
         <p class="zh zh-big"><span>金</span>狗</p>
         <p class="smallcaps" style="margin-top:18px">Hold the dog.<br>Earn real gold.</p>
-        <span class="foot-medal"><svg><use href="#orn-face-med"/></svg></span>
+        <span class="foot-medal"><svg><use href="#orn-photo-med"/></svg></span>
       </div>
       <div>
         <p class="smallcaps" style="margin-bottom:10px">Enter the kennel</p>

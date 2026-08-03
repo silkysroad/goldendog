@@ -35,19 +35,35 @@
 <svg class="orn-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs>
     <path id="orn-ringpath" d="M100,22 a78,78 0 1,1 -0.01,0"/>
+    <clipPath id="orn-photo-clip"><circle cx="100" cy="100" r="54"/></clipPath>
   </defs>
 
-  <!-- the standing golden dog, paper-cut silhouette, curled tail -->
-  <symbol id="orn-dog" viewBox="0 0 100 68">
-    <path fill="currentColor" d="M5,23
-      L15,21 L19,17
-      L22,3 L32,13 L35,13 L43,2 L49,13
-      Q57,12 65,14 L74,17
-      Q81,19 82,26 L82,64 L74,64 L74,47
-      Q72,44 68,44 L45,44 L44,64 L36,64 L36,43
-      Q32,40 30,33 Q26,35 20,34 L8,33 Q5,32 5,27 Z
-      M74,12 a10,10 0 1,1 20,0.01 a10,10 0 1,1 -20,-0.01 Z
-      M79,12 a5,5 0 1,0 10,-0.01 a5,5 0 1,0 -10,0.01 Z"/>
+  <!-- the standing golden dog — shiba silhouette after Plate 01: long muzzle, pricked ears, chest ruff, tucked waist, tail curled on the back -->
+  <symbol id="orn-dog" viewBox="0 0 100 78">
+    <path fill="currentColor" d="M4,19
+      L13,12 L16,11
+      L18,1 L25,9
+      L28,9
+      L31,8 L36,0 L41,9
+      Q45,11 47,15
+      Q51,19 58,18
+      L72,17
+      Q82,18 86,23
+      L89,33
+      Q90,41 86,46
+      L89,59 L92,74 L85,74 L82,60 L79,50
+      L76,53 L76,74 L69,74 L70,51
+      Q62,46 54,47
+      L46,49
+      L45,74 L39,74 L38,51
+      L34,51
+      L33,74 L26,74 L25,51
+      Q24,42 22,36
+      Q18,29 12,27
+      Q6,26 3,24
+      Z
+      M68,15 a12,12 0 1,1 24,0.01 a12,12 0 1,1 -24,-0.01 Z
+      M75,10 a5,5 0 1,0 10,-0.01 a5,5 0 1,0 -10,0.01 Z"/>
   </symbol>
 
   <!-- the meander ring, set in actual 回 characters -->
@@ -64,7 +80,13 @@
   <!-- zodiac medallion: standing dog in the meander ring -->
   <symbol id="orn-zodiac" viewBox="0 0 200 200">
     <use href="#orn-ring" width="200" height="200"/>
-    <use href="#orn-dog" x="56" y="70" width="88" height="60"/>
+    <use href="#orn-dog" x="57" y="66" width="86" height="67"/>
+  </symbol>
+
+  <!-- 金狗本尊 · Plate 01，入回纹环 -->
+  <symbol id="orn-photo-med" viewBox="0 0 200 200">
+    <use href="#orn-ring" width="200" height="200"/>
+    <image href="logo.png" x="46" y="46" width="108" height="108" preserveAspectRatio="xMidYMid slice" clip-path="url(#orn-photo-clip)"/>
   </symbol>
 
   <!-- the shiba chop face, line art, 狗 in the mouth -->
@@ -466,7 +488,7 @@
     <div class="sec-head">
       <span class="no">— 三</span>
       <h3>金子是真的</h3>
-      <span class="sec-medal"><svg><use href="#orn-zodiac"/></svg></span>
+      <span class="sec-medal"><svg><use href="#orn-photo-med"/></svg></span>
       <span class="zh-tag">The Gold Is Real</span>
     </div>
 
@@ -525,7 +547,7 @@
       <span class="yb-side" aria-hidden="true"><svg><use href="#orn-yuanbao-jin"/></svg></span>
       <span class="medal-wrap">
         <span class="medal-rays" aria-hidden="true"><svg><use href="#orn-rays"/></svg></span>
-        <span class="medal"><svg><use href="#orn-zodiac"/></svg></span>
+        <span class="medal"><svg><use href="#orn-photo-med"/></svg></span>
       </span>
       <span class="yb-side" aria-hidden="true"><svg><use href="#orn-yuanbao-jin"/></svg></span>
     </div>
@@ -582,8 +604,8 @@
       </div>
     </div>
 
-    <p class="fig-cap" style="margin-top:22px">每一行都是一笔真实触及金狗底池的 XAUt 转账，
-    由<b>你自己的浏览器</b>直接从 BNB Chain 读取。没有后端，没有索引器，无需信任任何人。</p>
+    <p class="fig-cap" style="margin-top:22px">以上每一行，先在链上结清，后在此处示人。
+    任何一行都可对照 <b>BscScan</b>。狗不记账。账，在链上。链上为证。</p>
   </section>
 
   <!-- ================= 五、走势 ================= -->
@@ -606,7 +628,7 @@
       <div>
         <p class="zh zh-big"><span>金</span>狗</p>
         <p class="smallcaps" style="margin-top:18px">持狗。<br>得金。</p>
-        <span class="foot-medal"><svg><use href="#orn-face-med"/></svg></span>
+        <span class="foot-medal"><svg><use href="#orn-photo-med"/></svg></span>
       </div>
       <div>
         <p class="smallcaps" style="margin-bottom:10px">进狗窝</p>
