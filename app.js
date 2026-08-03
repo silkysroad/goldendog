@@ -197,3 +197,106 @@
     }, { passive: true });
   }
 })();
+
+/* ================= elite pass: inertial scroll, chapter rail, depth ================= */
+(function () {
+  var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var lenis = null;
+
+  /* ---------- lenis inertial scroll (fine pointers only; touch stays native) ---------- */
+  if (!REDUCED && window.Lenis && window.matchMedia("(pointer: fine)").matches) {
+    lenis = new Lenis({
+      duration: 1.25,
+      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      smoothWheel: true
+    });
+    (function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    })(0);
+  }
+
+  /* smooth anchor jumps (works with or without lenis) */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var el = document.querySelector(a.getAttribute("href"));
+    if (!el) return;
+    e.preventDefault();
+    if (lenis) lenis.scrollTo(el, { offset: -70, duration: 1.4 });
+    else el.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth" });
+  });
+
+  /* ---------- chapter rail (desktop): numerals + titles pulled from the page ---------- */
+  var secs = Array.prototype.slice.call(document.querySelectorAll("section[id]"));
+  if (secs.length) {
+    var rail = document.createElement("nav");
+    rail.className = "rail";
+    rail.setAttribute("aria-label", "chapters");
+    var seal = document.createElement("span");
+    seal.className = "rail-seal";
+    seal.innerHTML = '<svg viewBox="0 0 200 200"><use href="#orn-zodiac"/></svg>';
+    rail.appendChild(seal);
+    var links = {};
+    secs.forEach(function (s) {
+      var no = s.querySelector(".sec-head .no");
+      var h = s.querySelector(".sec-head h3");
+      if (!h) return;
+      var a = document.createElement("a");
+      a.href = "#" + s.id;
+      a.innerHTML = "<i></i><span class='lbl'>" +
+        (no ? no.textContent.replace(/[—\s]+/g, "") + " · " : "") +
+        h.textContent + "</span>";
+      rail.appendChild(a);
+      links[s.id] = a;
+    });
+    document.body.appendChild(rail);
+
+    /* appear after the hero */
+    var hero = document.querySelector(".hero");
+    window.addEventListener("scroll", function () {
+      var edge = hero ? hero.offsetTop + hero.offsetHeight - 120 : 400;
+      rail.classList.toggle("vis", window.scrollY > edge);
+    }, { passive: true });
+
+    /* scrollspy */
+    if ("IntersectionObserver" in window) {
+      var current = null;
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) current = en.target.id;
+        });
+        Object.keys(links).forEach(function (id) {
+          links[id].classList.toggle("on", id === current);
+        });
+      }, { rootMargin: "-35% 0px -55% 0px" });
+      secs.forEach(function (s) { spy.observe(s); });
+    }
+  }
+
+  /* ---------- scroll depth: ornaments drift at different speeds (desktop only) ---------- */
+  if (!REDUCED) {
+    var deskMQ = window.matchMedia("(min-width: 1100px)");
+    var wm = document.querySelector(".hero-watermark");
+    var plaque = document.querySelector(".hero-plaque");
+    var cl = document.querySelector(".couplet.cl");
+    var cr = document.querySelector(".couplet.cr");
+    var ticking = false;
+    function depth() {
+      ticking = false;
+      if (!deskMQ.matches) {
+        [wm, plaque, cl, cr].forEach(function (el) { if (el) el.style.transform = ""; });
+        if (plaque) plaque.style.transform = "rotate(-2deg)";
+        return;
+      }
+      var y = Math.min(window.scrollY, 900);
+      if (wm) wm.style.transform = "translateY(" + y * 0.1 + "px) rotate(" + y * 0.012 + "deg)";
+      if (plaque) plaque.style.transform = "rotate(-2deg) translateY(" + y * 0.045 + "px)";
+      if (cl) cl.style.transform = "translateY(" + y * 0.07 + "px)";
+      if (cr) cr.style.transform = "translateY(" + y * 0.09 + "px)";
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(depth); }
+    }, { passive: true });
+  }
+})();
