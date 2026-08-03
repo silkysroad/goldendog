@@ -60,7 +60,7 @@
     display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
   }
   .masthead .brand{display:flex;align-items:center;gap:14px;}
-  .masthead .brand img{width:38px;height:38px;display:block;border:1px solid var(--red);}
+  .masthead .brand img{width:38px;height:38px;display:block;border:1px solid var(--red);object-fit:cover;object-position:50% 42%;background:#fff;}
   .masthead .brand .zh{font-size:22px;font-weight:900;color:var(--red);}
   .masthead nav{display:flex;gap:28px;}
   .masthead nav a{color:var(--ink-soft);text-decoration:none;}
