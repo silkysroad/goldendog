@@ -33,6 +33,7 @@
         <a href="#lore">Lore</a>
         <a href="#mechanics">Mechanics</a>
         <a href="#gold">The Gold</a>
+        <a href="#vault">Vault</a>
         <a href="#chart">Chart</a>
         <a href="zh.html" class="zh" style="font-size:13px;font-weight:600;color:var(--red);border:1px solid var(--red);padding:3px 10px;">中文版</a>
       </nav>
@@ -50,7 +51,7 @@
     <div class="hero-plate">
       <div class="seal zh">金<br>狗</div>
       <img src="logo.png" alt="The Golden Dog — official plate">
-      <p class="plate-cap">Plate 01 — The Golden Dog · 金狗</p>
+      <p class="plate-cap">Plate 01 — The Golden Dog · struck in digital gold</p>
     </div>
 
     <h1 class="zh"><span class="gold-char">金</span><span class="red-char">狗</span></h1>
@@ -288,17 +289,59 @@
     <p class="note">Price, market cap and volume move by the minute — see the live chart below for numbers that are true right now.</p>
   </div>
 
+  <!-- ================= IV. THE VAULT, LIVE ================= -->
+  <section id="vault">
+    <div class="sec-head">
+      <span class="no">— IV</span>
+      <h3>The Vault, Live</h3>
+      <span class="live-pill smallcaps"><i></i>Live from BNB Chain</span>
+      <span class="zh-tag">金库实况</span>
+    </div>
+
+    <div class="vault-grid">
+      <div class="vault-stats">
+        <div class="vtile">
+          <p class="smallcaps">Gold in the pool · right now</p>
+          <div class="vnum goldnum"><span id="v-oz">…</span><i> oz</i></div>
+          <p class="vsub" id="v-oz-usd">reading the vault…</p>
+        </div>
+        <div class="vtile">
+          <p class="smallcaps">One ounce of XAUt</p>
+          <div class="vnum"><span id="v-px">…</span></div>
+          <p class="vsub">Tether Gold · Swiss-vaulted</p>
+        </div>
+        <div class="vtile">
+          <p class="smallcaps">Gold moved · last hour</p>
+          <div class="vnum goldnum"><span id="v-flow">…</span><i> oz</i></div>
+          <p class="vsub" id="v-flow-sub">listening…</p>
+        </div>
+      </div>
+
+      <div class="vault-ledger">
+        <div class="ledger-head">
+          <span class="smallcaps">Fig. 04 — The Gold Ledger</span>
+          <span class="lscan mono" id="v-scan">dialing the chain…</span>
+        </div>
+        <ul id="ledger" class="ledger"></ul>
+        <p class="ledger-empty smallcaps">The pool is quiet. The moment gold moves, it prints here.</p>
+      </div>
+    </div>
+
+    <p class="fig-cap" style="margin-top:22px">Every row is a real XAUt transfer touching the golden dog's
+    pool, read by <b>your own browser</b> directly from BNB Chain. No backend. No indexer. No trust required.</p>
+  </section>
+
   <!-- ================= CHART ================= -->
   <section id="chart" style="border-bottom:1px solid var(--line)">
     <div class="sec-head">
-      <span class="no">— IV</span>
+      <span class="no">— V</span>
       <h3>The Chart</h3>
       <span class="zh-tag">走势</span>
     </div>
     <div class="chart-wrap">
       <iframe src="https://dexscreener.com/bsc/0x1CE038394B2E11ebd6D7Cc44E7F98c9D195832f0?embed=1&theme=light&trades=0&info=0" title="金狗 live chart" loading="lazy"></iframe>
     </div>
-    <p class="fig-cap" style="margin-top:16px">Fig. 03 — Live via DexScreener. The editorial team does not predict the future; it only distributes gold.</p>
+    <p class="fig-cap" style="margin-top:16px">Fig. 05 — Live via DexScreener. The editorial team does not predict the future; it only distributes gold.</p>
   </section>
 
   <!-- ================= FOOTER ================= -->
@@ -350,5 +393,10 @@ function copyCA(btn){
 }
 </script>
 <script src="app.js" defer></script>
+<script src="vault.js" defer></script>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module" src="coin.js"></script>
 </body>
 </html>

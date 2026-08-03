@@ -109,7 +109,8 @@
   /* ---------- scroll reveals ---------- */
   var rvSel = [".sec-head", ".hero-sub", ".ca-bar", ".lore-grid .lede", ".pull", ".timeline .row",
     ".defn", ".mech-diagram", ".fig-cap", ".index .item", ".mech-line", ".bar-chart",
-    ".gold-copy", ".stat", ".stats .note", ".chart-wrap", ".foot-grid > div", ".colophon"].join(",");
+    ".gold-copy", ".stat", ".stats .note", ".chart-wrap", ".foot-grid > div", ".colophon",
+    ".vtile", ".vault-ledger"].join(",");
   var rvEls = Array.prototype.slice.call(document.querySelectorAll(rvSel));
   rvEls.forEach(function (el, i) {
     el.classList.add("rv");

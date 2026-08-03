@@ -45,6 +45,7 @@
         <a href="#lore">传说</a>
         <a href="#mechanics">机制</a>
         <a href="#gold">真金</a>
+        <a href="#vault">金库</a>
         <a href="#chart">走势</a>
         <a href="index.html" style="font-size:11px;font-weight:600;color:var(--red);border:1px solid var(--red);padding:3px 10px;">ENGLISH</a>
       </nav>
@@ -62,7 +63,7 @@
     <div class="hero-plate">
       <div class="seal zh">金<br>狗</div>
       <img src="logo.png" alt="金狗 — 官方图版">
-      <p class="plate-cap">图版 01 — 金狗 · The Golden Dog</p>
+      <p class="plate-cap">图版 01 — 金狗 · 数字黄金铸造</p>
     </div>
 
     <h1 class="zh"><span class="gold-char">金</span><span class="red-char">狗</span></h1>
@@ -287,17 +288,59 @@
     <p class="note">价格、市值、交易量每分钟都在变 — 此刻的真实数字，看下方实时走势图。</p>
   </div>
 
-  <!-- ================= 走势 ================= -->
-  <section id="chart" style="border-bottom:1px solid var(--line)">
+  <!-- ================= 四、金库实况 ================= -->
+  <section id="vault">
     <div class="sec-head">
       <span class="no">— 四</span>
+      <h3>金库实况</h3>
+      <span class="live-pill smallcaps"><i></i>BNB Chain 直连</span>
+      <span class="zh-tag">The Vault, Live</span>
+    </div>
+
+    <div class="vault-grid">
+      <div class="vault-stats">
+        <div class="vtile">
+          <p class="smallcaps">底池黄金 · 此时此刻</p>
+          <div class="vnum goldnum"><span id="v-oz">…</span><i> 盎司</i></div>
+          <p class="vsub" id="v-oz-usd">正在读取金库…</p>
+        </div>
+        <div class="vtile">
+          <p class="smallcaps">一盎司 XAUt</p>
+          <div class="vnum"><span id="v-px">…</span></div>
+          <p class="vsub">Tether Gold · 瑞士金库</p>
+        </div>
+        <div class="vtile">
+          <p class="smallcaps">黄金流动 · 最近一小时</p>
+          <div class="vnum goldnum"><span id="v-flow">…</span><i> 盎司</i></div>
+          <p class="vsub" id="v-flow-sub">监听中…</p>
+        </div>
+      </div>
+
+      <div class="vault-ledger">
+        <div class="ledger-head">
+          <span class="smallcaps">图 04 — 黄金总账</span>
+          <span class="lscan mono" id="v-scan">正在连线链上…</span>
+        </div>
+        <ul id="ledger" class="ledger"></ul>
+        <p class="ledger-empty smallcaps">底池暂时安静。黄金一动，立刻上账。</p>
+      </div>
+    </div>
+
+    <p class="fig-cap" style="margin-top:22px">每一行都是一笔真实触及金狗底池的 XAUt 转账，
+    由<b>你自己的浏览器</b>直接从 BNB Chain 读取。没有后端，没有索引器，无需信任任何人。</p>
+  </section>
+
+  <!-- ================= 五、走势 ================= -->
+  <section id="chart" style="border-bottom:1px solid var(--line)">
+    <div class="sec-head">
+      <span class="no">— 五</span>
       <h3>走势</h3>
       <span class="zh-tag">The Chart</span>
     </div>
     <div class="chart-wrap">
       <iframe src="https://dexscreener.com/bsc/0x1CE038394B2E11ebd6D7Cc44E7F98c9D195832f0?embed=1&theme=light&trades=0&info=0" title="金狗实时走势" loading="lazy"></iframe>
     </div>
-    <p class="fig-cap" style="margin-top:16px">图 03 — DexScreener 实时数据。编辑部不预测未来，只分发黄金。</p>
+    <p class="fig-cap" style="margin-top:16px">图 05 — DexScreener 实时数据。编辑部不预测未来，只分发黄金。</p>
   </section>
 
   <!-- ================= 页脚 ================= -->
@@ -348,5 +391,10 @@ function copyCA(btn){
 }
 </script>
 <script src="app.js" defer></script>
+<script src="vault.js" defer></script>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module" src="coin.js"></script>
 </body>
 </html>
