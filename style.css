@@ -563,11 +563,19 @@
     section[id]{scroll-margin-top:106px;}
     .masthead{gap:0;position:relative;}
     .masthead > .smallcaps:last-child{display:none;}
-    .masthead .brand{width:100%;gap:10px;padding-right:88px;min-height:32px;}
+    .masthead .brand{width:100%;gap:10px;padding-right:104px;min-height:32px;}
     .masthead .brand img{width:30px;height:30px;}
     .masthead .brand .zh{font-size:20px;line-height:1;}
     .masthead .brand .smallcaps{display:none;}
-    .masthead .lang{position:absolute;top:2px;right:0;background:var(--paper);}
+    .masthead .lang{
+      position:absolute;top:0;right:0;
+      background:var(--red)!important;
+      color:var(--paper)!important;
+      border:1.5px solid var(--red-deep)!important;
+      font-size:13px!important;font-weight:700!important;
+      padding:6px 13px!important;letter-spacing:.04em;
+      box-shadow:0 2px 8px -3px rgba(46,12,13,.4);
+    }
     .masthead nav{
       width:100%;overflow-x:auto;gap:24px;padding:9px 0 11px;margin-top:10px;
       border-top:1px solid var(--line);
