@@ -1,0 +1,12 @@
+import puppeteer from 'puppeteer-core';
+const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:'new'});
+const p=await b.newPage();
+await p.setViewport({width:1600,height:1000});
+await p.goto('https://jingou.gold/',{waitUntil:'networkidle2',timeout:60000});
+await p.evaluate(()=>document.querySelector('#chart, .chart-frame, iframe')?.scrollIntoView({block:'center'}));
+await new Promise(r=>setTimeout(r,15000));
+await p.evaluate(()=>document.querySelector('iframe')?.scrollIntoView({block:'center'}));
+await new Promise(r=>setTimeout(r,3000));
+await p.screenshot({path:'_chart_wait.png'});
+console.log('done');
+await b.close();
