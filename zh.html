@@ -152,6 +152,29 @@
       <path d="M0,79 A21,21 0 0 1 0,121" stroke-width="2.4"/>
     </g>
   </symbol>
+
+  <!-- ============ 金锭层 — 元宝与金条 ============ -->
+  <symbol id="orn-yuanbao" viewBox="0 0 120 68">
+    <path fill="currentColor" d="M60,4 Q78,4 83,24 Q84,30 78,31 Q60,34 42,31 Q36,30 37,24 Q42,4 60,4 Z"/>
+    <path fill="currentColor" d="M7,14 Q16,28 30,32 Q45,36 60,36 Q75,36 90,32 Q104,28 113,14 Q121,32 105,47 Q87,62 60,62 Q33,62 15,47 Q-1,32 7,14 Z"/>
+    <path fill="none" stroke="var(--paper,#F4EBD8)" stroke-width="2.2" d="M16,26 Q36,38 60,38 Q84,38 104,26" opacity=".85"/>
+  </symbol>
+  <symbol id="orn-yuanbao-jin" viewBox="0 0 120 68">
+    <use href="#orn-yuanbao" width="120" height="68"/>
+    <text x="60" y="55" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="17" font-weight="900" fill="var(--paper,#F4EBD8)">金</text>
+  </symbol>
+  <symbol id="orn-goldbar" viewBox="0 0 150 58">
+    <path fill="currentColor" d="M22,5 H128 L145,53 H5 Z"/>
+    <path fill="none" stroke="var(--paper,#F4EBD8)" stroke-width="1.1" opacity=".7" d="M28,11 H122 L135,47 H15 Z"/>
+    <text x="75" y="29" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="15" font-weight="900" fill="var(--paper,#F4EBD8)">金狗</text>
+    <text x="75" y="42" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7" letter-spacing="2" fill="var(--paper,#F4EBD8)" opacity=".85" textLength="86" lengthAdjust="spacingAndGlyphs">FINE GOLD 999.9</text>
+  </symbol>
+  <symbol id="orn-barstack" viewBox="0 0 300 124">
+    <use href="#orn-goldbar" x="8" y="66" width="140" height="54"/>
+    <use href="#orn-goldbar" x="152" y="66" width="140" height="54"/>
+    <use href="#orn-goldbar" x="80" y="10" width="140" height="54"/>
+    <path d="M0,122 H300" stroke="currentColor" stroke-width="1" opacity=".5"/>
+  </symbol>
 </svg>
 
 
@@ -199,6 +222,10 @@
         <img src="logo.png" alt="金狗 — 官方图版">
         <p class="plate-cap">图版 01 — 金狗 · 数字黄金铸造</p>
       </div>
+      <span class="altar-ingots" aria-hidden="true">
+        <svg class="i1"><use href="#orn-yuanbao-jin"/></svg>
+        <svg class="i2"><use href="#orn-yuanbao"/></svg>
+      </span>
     </div>
 
     <h1 class="zh"><span class="gold-char">金</span><span class="red-char">狗</span></h1>
@@ -460,6 +487,11 @@
         SpaceX、特斯拉、英伟达。而金狗，选了唯一一个有五千年在线时长的配对。</p>
       </div>
     </div>
+
+    <div class="bullion" aria-hidden="true">
+      <svg><use href="#orn-barstack"/></svg>
+    </div>
+    <p class="fig-cap bullion-cap">图 03 — 编辑部想象中的金库。<br>真实的盎司数，见下方金库实况。</p>
   </section>
 
   <!-- ================= 红漆数据带 ================= -->
@@ -469,10 +501,12 @@
     <span class="cloud-fan bl"><svg><use href="#orn-clouds"/></svg></span>
     <span class="cloud-fan br"><svg><use href="#orn-clouds"/></svg></span>
     <div class="medal-divider">
+      <span class="yb-side" aria-hidden="true"><svg><use href="#orn-yuanbao-jin"/></svg></span>
       <span class="medal-wrap">
         <span class="medal-rays" aria-hidden="true"><svg><use href="#orn-rays"/></svg></span>
         <span class="medal"><svg><use href="#orn-zodiac"/></svg></span>
       </span>
+      <span class="yb-side" aria-hidden="true"><svg><use href="#orn-yuanbao-jin"/></svg></span>
     </div>
     <div class="stat-row">
       <div class="stat"><div class="v">10<span style="font-size:.5em">亿</span></div><div class="l smallcaps">总供应量 · 恒定不增发</div></div>
@@ -509,6 +543,11 @@
           <p class="smallcaps">黄金流动 · 最近一小时</p>
           <div class="vnum goldnum"><span id="v-flow">…</span><i> 盎司</i></div>
           <p class="vsub" id="v-flow-sub">监听中…</p>
+        </div>
+        <div class="vault-ingots" aria-hidden="true">
+          <svg style="width:32px;height:19px"><use href="#orn-yuanbao"/></svg>
+          <svg style="width:46px;height:27px"><use href="#orn-yuanbao-jin"/></svg>
+          <svg style="width:26px;height:15px"><use href="#orn-yuanbao"/></svg>
         </div>
       </div>
 
@@ -572,9 +611,12 @@
 
     <div class="kennel" aria-hidden="true">
       <svg><use href="#orn-dog"/></svg>
+      <svg class="yb"><use href="#orn-yuanbao"/></svg>
       <svg><use href="#orn-dog"/></svg>
       <svg class="gold"><use href="#orn-dog"/></svg>
+      <svg class="yb"><use href="#orn-yuanbao-jin"/></svg>
       <svg><use href="#orn-dog"/></svg>
+      <svg class="yb"><use href="#orn-yuanbao"/></svg>
       <svg><use href="#orn-dog"/></svg>
     </div>
 

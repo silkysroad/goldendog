@@ -16,7 +16,7 @@
   html{scroll-behavior:smooth;}
   body{
     /* scattered petals on the paper — from the zodiac poster reference */
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='560'%3E%3Cg fill='%23A6252A' fill-opacity='.055'%3E%3Cpath d='M40,60 C44,44 58,36 74,40 C70,56 56,64 40,60 Z'/%3E%3Cpath d='M420,90 C412,76 416,60 430,52 C438,66 434,82 420,90 Z'/%3E%3Cpath d='M240,300 C244,284 258,276 274,280 C270,296 256,304 240,300 Z'/%3E%3Cpath d='M90,430 C82,416 86,400 100,392 C108,406 104,422 90,430 Z'/%3E%3Cpath d='M480,380 C484,364 498,356 514,360 C510,376 496,384 480,380 Z'/%3E%3C/g%3E%3Cg fill='%23C0891A' fill-opacity='.07'%3E%3Cpath d='M180,150 C172,136 176,120 190,112 C198,126 194,142 180,150 Z'/%3E%3Cpath d='M360,210 C364,194 378,186 394,190 C390,206 376,214 360,210 Z'/%3E%3Cpath d='M300,480 C292,466 296,450 310,442 C318,456 314,472 300,480 Z'/%3E%3Cpath d='M500,20 C504,4 518,-4 534,0 C530,16 516,24 500,20 Z'/%3E%3Cpath d='M30,250 C34,234 48,226 64,230 C60,246 46,254 30,250 Z'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(var(--paper),var(--paper));
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='560'%3E%3Cg fill='%23A6252A' fill-opacity='.055'%3E%3Cpath d='M40,60 C44,44 58,36 74,40 C70,56 56,64 40,60 Z'/%3E%3Cpath d='M420,90 C412,76 416,60 430,52 C438,66 434,82 420,90 Z'/%3E%3Cpath d='M240,300 C244,284 258,276 274,280 C270,296 256,304 240,300 Z'/%3E%3Cpath d='M90,430 C82,416 86,400 100,392 C108,406 104,422 90,430 Z'/%3E%3Cpath d='M480,380 C484,364 498,356 514,360 C510,376 496,384 480,380 Z'/%3E%3C/g%3E%3Cg fill='%23C0891A' fill-opacity='.07'%3E%3Cpath d='M180,150 C172,136 176,120 190,112 C198,126 194,142 180,150 Z'/%3E%3Cpath d='M360,210 C364,194 378,186 394,190 C390,206 376,214 360,210 Z'/%3E%3Cpath d='M300,480 C292,466 296,450 310,442 C318,456 314,472 300,480 Z'/%3E%3Cpath d='M500,20 C504,4 518,-4 534,0 C530,16 516,24 500,20 Z'/%3E%3Cpath d='M30,250 C34,234 48,226 64,230 C60,246 46,254 30,250 Z'/%3E%3C/g%3E%3Cg fill='%23C0891A' fill-opacity='.05'%3E%3Cpath d='M142,496 q14,0 17,15 l-34,0 q3,-15 17,-15 Z'/%3E%3Cpath d='M116,512 q26,8 52,0 q8,16 -26,18 q-34,-2 -26,-18 Z'/%3E%3Cpath d='M432,206 q14,0 17,15 l-34,0 q3,-15 17,-15 Z'/%3E%3Cpath d='M406,222 q26,8 52,0 q8,16 -26,18 q-34,-2 -26,-18 Z'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(var(--paper),var(--paper));
     background-size:560px 560px,auto;
     background-color:var(--paper);
     color:var(--ink);
@@ -718,4 +718,48 @@
   @media(prefers-reduced-motion:reduce){
     .sec-head::after{transform:scaleX(1);transition:none;}
     .rail{transition:none;}
+  }
+
+  /* ================================================================
+     THE BULLION LAYER — 元宝 & minted bars, tastefully throughout
+     ================================================================ */
+  /* altar offerings at the base of the hero shrine */
+  .altar-ingots{
+    position:absolute;left:50%;bottom:-40px;transform:translateX(-50%) rotate(1.5deg);
+    display:flex;align-items:flex-end;gap:9px;color:var(--gold);z-index:2;pointer-events:none;
+  }
+  .altar-ingots svg{display:block;}
+  .altar-ingots .i1{width:60px;height:34px;}
+  .altar-ingots .i2{width:38px;height:22px;opacity:.85;}
+
+  /* fig. 03 — the bullion plate closing section III */
+  .bullion{display:flex;align-items:center;gap:30px;margin-top:68px;color:var(--gold);}
+  .bullion::before,.bullion::after{content:"";flex:1;height:1px;background:var(--line);}
+  .bullion svg{display:block;width:230px;height:95px;flex:none;}
+  .bullion-cap{text-align:center;}
+
+  /* red band — 元宝 flanking the zodiac medallion */
+  .medal-divider .yb-side{width:52px;height:30px;color:var(--gold-bright);flex:none;opacity:.95;margin:0 22px;}
+  .medal-divider .yb-side svg{display:block;width:100%;height:100%;}
+
+  /* vault — small reserve row under the live tiles */
+  .vault-ingots{
+    display:flex;align-items:flex-end;gap:10px;color:var(--gold);
+    padding-top:24px;border-top:1px solid var(--line);
+  }
+  .vault-ingots svg{display:block;flex:none;}
+
+  /* kennel — the gold dog leaves ingots behind */
+  .kennel svg.yb{width:28px;height:16px;color:var(--gold);opacity:.9;}
+
+  @media(max-width:900px){
+    .altar-ingots{bottom:-34px;}
+    .altar-ingots .i1{width:50px;height:28px;}
+    .altar-ingots .i2{width:32px;height:18px;}
+    .bullion{gap:18px;margin-top:48px;}
+    .bullion svg{width:180px;height:74px;}
+    .medal-divider .yb-side{width:38px;height:22px;margin:0 4px;}
+    .kennel{gap:10px;}
+    .kennel svg{width:32px;height:21px;}
+    .kennel svg.yb{width:20px;height:12px;}
   }
