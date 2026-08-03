@@ -92,7 +92,15 @@
   .hero .translit .tick{width:56px;height:1px;background:var(--red);}
   .hero-sub{
     margin-top:56px;
-    display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:end;
+    display:grid;grid-template-columns:1.4fr 1fr;column-gap:64px;row-gap:22px;align-items:end;
+  }
+  .hero-sub .hook-kicker{
+    grid-column:1 / -1;
+    color:var(--red);
+    display:flex;align-items:center;gap:16px;
+  }
+  .hero-sub .hook-kicker::after{
+    content:"";flex:1;height:1px;background:currentColor;opacity:.35;
   }
   .hero-sub h2{
     font-weight:560;font-size:clamp(30px,3.4vw,44px);line-height:1.14;letter-spacing:-.01em;
