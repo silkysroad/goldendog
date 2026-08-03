@@ -31,6 +31,86 @@
 <body>
 <div class="reg tl"></div><div class="reg tr"></div><div class="reg bl"></div><div class="reg br"></div>
 
+<!-- ============ ORNAMENT SPRITE — dogs, medallions, clouds ============ -->
+<svg class="orn-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <path id="orn-ringpath" d="M100,22 a78,78 0 1,1 -0.01,0"/>
+  </defs>
+
+  <!-- the standing golden dog, paper-cut silhouette, curled tail -->
+  <symbol id="orn-dog" viewBox="0 0 100 68">
+    <path fill="currentColor" d="M5,23
+      L15,21 L19,17
+      L22,3 L32,13 L35,13 L43,2 L49,13
+      Q57,12 65,14 L74,17
+      Q81,19 82,26 L82,64 L74,64 L74,47
+      Q72,44 68,44 L45,44 L44,64 L36,64 L36,43
+      Q32,40 30,33 Q26,35 20,34 L8,33 Q5,32 5,27 Z
+      M74,12 a10,10 0 1,1 20,0.01 a10,10 0 1,1 -20,-0.01 Z
+      M79,12 a5,5 0 1,0 10,-0.01 a5,5 0 1,0 -10,0.01 Z"/>
+  </symbol>
+
+  <!-- the meander ring, set in actual 回 characters -->
+  <symbol id="orn-ring" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2.6"/>
+    <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="1"/>
+    <text font-family="'Noto Serif SC',serif" font-size="14.5" font-weight="600" fill="currentColor">
+      <textPath href="#orn-ringpath" textLength="486" lengthAdjust="spacingAndGlyphs">回回回回回回回回回回回回回回回回回回回回回回回回回回回回</textPath>
+    </text>
+    <circle cx="100" cy="100" r="64" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <circle cx="100" cy="100" r="59" fill="none" stroke="currentColor" stroke-width=".8"/>
+  </symbol>
+
+  <!-- zodiac medallion: standing dog in the meander ring -->
+  <symbol id="orn-zodiac" viewBox="0 0 200 200">
+    <use href="#orn-ring" width="200" height="200"/>
+    <use href="#orn-dog" x="56" y="70" width="88" height="60"/>
+  </symbol>
+
+  <!-- the shiba chop face, line art, 狗 in the mouth -->
+  <symbol id="orn-face" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50,78 L36,24 Q37,18 43,21 L88,46"/>
+      <path d="M56,64 L49,38 L74,52" stroke-width="3.5"/>
+      <path d="M150,78 L164,24 Q163,18 157,21 L112,46"/>
+      <path d="M144,64 L151,38 L126,52" stroke-width="3.5"/>
+      <path d="M88,46 Q100,40 112,46"/>
+      <path d="M50,78 Q40,92 44,104 Q48,116 64,121"/>
+      <path d="M150,78 Q160,92 156,104 Q152,116 136,121"/>
+      <path d="M56,96 l11,-3 M58,105 l11,-3" stroke-width="3"/>
+      <path d="M144,96 l-11,-3 M142,105 l-11,-3" stroke-width="3"/>
+      <path d="M100,104 v7 M100,111 q-7,9 -16,5 M100,111 q7,9 16,5" stroke-width="4"/>
+      <path d="M64,121 Q58,164 100,168 Q142,164 136,121 Q126,110 100,112 Q74,110 64,121 Z"/>
+    </g>
+    <circle cx="74" cy="84" r="5.5" fill="currentColor"/>
+    <circle cx="126" cy="84" r="5.5" fill="currentColor"/>
+    <path d="M92,94 h16 l-8,10 Z" fill="currentColor" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+    <text x="100" y="153" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="30" font-weight="900" fill="currentColor">狗</text>
+  </symbol>
+
+  <!-- face chop in the meander ring -->
+  <symbol id="orn-face-med" viewBox="0 0 200 200">
+    <use href="#orn-ring" width="200" height="200"/>
+    <use href="#orn-face" x="30" y="30" width="140" height="140"/>
+  </symbol>
+
+  <!-- corner cloud fan (top-left orientation) -->
+  <symbol id="orn-clouds" viewBox="0 0 140 140">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+      <path d="M0,22 A22,22 0 0 0 22,0"/>
+      <path d="M0,34 A34,34 0 0 0 34,0"/>
+      <path d="M0,46 A46,46 0 0 0 46,0"/>
+      <path d="M0,58 A58,58 0 0 0 58,0"/>
+      <path d="M0,70 A70,70 0 0 0 70,0"/>
+      <path d="M88,0 A12,12 0 0 0 112,0" stroke-width="2.4"/>
+      <path d="M79,0 A21,21 0 0 0 121,0" stroke-width="2.4"/>
+      <path d="M0,88 A12,12 0 0 1 0,112" stroke-width="2.4"/>
+      <path d="M0,79 A21,21 0 0 1 0,121" stroke-width="2.4"/>
+    </g>
+  </symbol>
+</svg>
+
+
 <div class="frame">
 
   <!-- ================= 报头 ================= -->
@@ -55,6 +135,8 @@
 
   <!-- ================= 头版 ================= -->
   <div class="hero">
+    <span class="cloud-fan tl"><svg><use href="#orn-clouds"/></svg></span>
+    <span class="hero-watermark"><svg><use href="#orn-zodiac"/></svg></span>
     <div class="issue">
       <span class="smallcaps">Nº 001 — 字面意思版</span>
       <span class="smallcaps">底池配对 XAUt · Tether Gold</span>
@@ -91,6 +173,7 @@
     <div class="sec-head">
       <span class="no">— 一</span>
       <h3>传说</h3>
+      <span class="sec-medal"><svg><use href="#orn-zodiac"/></svg></span>
       <span class="zh-tag">The Lore</span>
     </div>
 
@@ -143,6 +226,7 @@
     <div class="sec-head">
       <span class="no">— 二</span>
       <h3>机制</h3>
+      <span class="sec-medal"><svg><use href="#orn-face-med"/></svg></span>
       <span class="zh-tag">The Mechanics</span>
     </div>
 
@@ -234,6 +318,7 @@
     <div class="sec-head">
       <span class="no">— 三</span>
       <h3>金子是真的</h3>
+      <span class="sec-medal"><svg><use href="#orn-zodiac"/></svg></span>
       <span class="zh-tag">The Gold Is Real</span>
     </div>
 
@@ -279,6 +364,11 @@
 
   <!-- ================= 红漆数据带 ================= -->
   <div class="stats">
+    <span class="cloud-fan tl"><svg><use href="#orn-clouds"/></svg></span>
+    <span class="cloud-fan tr"><svg><use href="#orn-clouds"/></svg></span>
+    <span class="cloud-fan bl"><svg><use href="#orn-clouds"/></svg></span>
+    <span class="cloud-fan br"><svg><use href="#orn-clouds"/></svg></span>
+    <div class="medal-divider"><span class="medal"><svg><use href="#orn-zodiac"/></svg></span></div>
     <div class="stat-row">
       <div class="stat"><div class="v">10<span style="font-size:.5em">亿</span></div><div class="l smallcaps">总供应量 · 恒定不增发</div></div>
       <div class="stat"><div class="v goldnum">XAUt</div><div class="l smallcaps">分红资产 · 1盎司黄金</div></div>
@@ -294,6 +384,7 @@
       <span class="no">— 四</span>
       <h3>金库实况</h3>
       <span class="live-pill smallcaps"><i></i>BNB Chain 直连</span>
+      <span class="sec-medal"><svg><use href="#orn-face-med"/></svg></span>
       <span class="zh-tag">The Vault, Live</span>
     </div>
 
@@ -335,6 +426,7 @@
     <div class="sec-head">
       <span class="no">— 五</span>
       <h3>走势</h3>
+      <span class="sec-medal"><svg><use href="#orn-zodiac"/></svg></span>
       <span class="zh-tag">The Chart</span>
     </div>
     <div class="chart-wrap">
@@ -349,6 +441,7 @@
       <div>
         <p class="zh zh-big"><span>金</span>狗</p>
         <p class="smallcaps" style="margin-top:18px">持狗。<br>得金。</p>
+        <span class="foot-medal"><svg><use href="#orn-face-med"/></svg></span>
       </div>
       <div>
         <p class="smallcaps" style="margin-bottom:10px">进狗窝</p>
@@ -371,6 +464,14 @@
     <p class="disclaimer">金狗是社区在 flap.sh 上发射的 meme 币。没有路线图，没有团队份额，
     除了合约本身没有任何承诺。黄金空投取决于交易量，不构成收益保证。
     本页是传说，不是投资建议。狗概不负责。狗不理。</p>
+
+    <div class="kennel" aria-hidden="true">
+      <svg><use href="#orn-dog"/></svg>
+      <svg><use href="#orn-dog"/></svg>
+      <svg class="gold"><use href="#orn-dog"/></svg>
+      <svg><use href="#orn-dog"/></svg>
+      <svg><use href="#orn-dog"/></svg>
+    </div>
 
     <div class="colophon">
       <span>金狗 — THE GOLDEN DOG · Nº 001 · 中文版</span>

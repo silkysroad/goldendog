@@ -476,3 +476,48 @@
     .seal,.hero-plate{display:none;}
     .ca-bar .lab{display:none;}
   }
+
+  /* ================================================================
+     THE ORNAMENT LAYER — dogs, medallions, cloud fans
+     ================================================================ */
+  .orn-defs{position:absolute;width:0;height:0;overflow:hidden;}
+  .cloud-fan{position:absolute;pointer-events:none;color:var(--gold);}
+  .cloud-fan svg,.hero-watermark svg,.sec-medal svg,.medal-divider svg,
+  .foot-medal svg,.kennel svg{display:block;width:100%;height:100%;}
+
+  /* hero — cloud fan top-left + zodiac watermark */
+  .hero .cloud-fan.tl{top:36px;left:-14px;width:150px;height:150px;opacity:.5;z-index:-1;}
+  .hero-watermark{
+    position:absolute;pointer-events:none;color:var(--gold);
+    width:440px;height:440px;left:56%;top:120px;opacity:.13;z-index:-1;
+  }
+
+  /* section heads — small zodiac medallion */
+  .sec-medal{width:36px;height:36px;color:var(--gold);opacity:.95;align-self:center;flex:none;}
+
+  /* stat band — image 01 recreated: gold medallion on red, cloud corners */
+  .stats{position:relative;overflow:hidden;}
+  .stats .cloud-fan{width:118px;height:118px;opacity:.55;color:var(--gold-bright);}
+  .stats .cloud-fan.tl{top:10px;left:10px;}
+  .stats .cloud-fan.tr{top:10px;right:10px;transform:scaleX(-1);}
+  .stats .cloud-fan.bl{bottom:10px;left:10px;transform:scaleY(-1);}
+  .stats .cloud-fan.br{bottom:10px;right:10px;transform:scale(-1,-1);}
+  .medal-divider{display:flex;align-items:center;gap:30px;margin-bottom:52px;position:relative;z-index:1;}
+  .medal-divider::before,.medal-divider::after{content:"";flex:1;height:1px;background:rgba(244,235,216,.34);}
+  .medal-divider .medal{width:112px;height:112px;color:var(--gold-bright);flex:none;}
+  .stat-row,.stats .note{position:relative;z-index:1;}
+
+  /* footer — shiba chop medallion + the kennel walk */
+  .foot-medal{width:128px;height:128px;color:var(--gold);margin-top:22px;}
+  .kennel{display:flex;align-items:center;gap:20px;margin-top:70px;}
+  .kennel::before,.kennel::after{content:"";flex:1;height:1px;background:var(--line);}
+  .kennel svg{width:46px;height:31px;color:var(--ink-faint);flex:none;transition:color .3s ease;}
+  .kennel svg.gold{color:var(--gold);}
+  .kennel svg:hover{color:var(--red);}
+
+  @media(max-width:900px){
+    .hero-watermark{display:none;}
+    .hero .cloud-fan.tl{width:90px;height:90px;top:20px;}
+    .stats .cloud-fan{width:70px;height:70px;}
+    .medal-divider .medal{width:84px;height:84px;}
+  }
