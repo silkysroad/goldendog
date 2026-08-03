@@ -57,7 +57,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
     /* square texture on a round cap: zoom to the circle so corners don't smear */
     t.center.set(0.5, 0.5);
     t.repeat.set(0.86, 0.86);
-    t.rotation = 0;
+    t.rotation = Math.PI / 2;
     t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping;
   });
   var faceMat = new THREE.MeshPhysicalMaterial({
@@ -86,6 +86,9 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
   }
   var backTex = new THREE.CanvasTexture(back);
   backTex.colorSpace = THREE.SRGBColorSpace;
+  /* orient + mirror so the chop reads upright when the spin brings the reverse around */
+  backTex.center.set(0.5, 0.5);
+  backTex.rotation = Math.PI / 2;
   drawBack();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawBack);
   var backMat = new THREE.MeshPhysicalMaterial({
@@ -114,12 +117,12 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
     coin.add(tk);
   }
 
-  /* lay the coin flat — face up like a coin on a table, viewed from a raised angle */
+  /* upright, facing the viewer — the spin happens about the vertical axis */
   var tilt = new THREE.Group();
-  tilt.rotation.x = -1.05;
+  tilt.rotation.x = -0.08;
   tilt.add(coin);
   scene.add(tilt);
-  camera.position.set(0, 0.35, 4.5);
+  camera.position.set(0, 0.12, 4.6);
   camera.lookAt(0, 0, 0);
 
   /* pointer tilt */
@@ -151,14 +154,15 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
     if (!visible) return;
     var t = clock.getElapsedTime();
     if (!REDUCED) {
-      /* spin about the face axis — a coin turning flat on the table */
-      coin.rotation.z = t * 0.5;
-      /* slow precession wobble + pointer influence on the lay angle */
-      tilt.rotation.x = -1.05 + Math.sin(t * 0.7) * 0.06 + tx * 0.2;
-      tilt.rotation.z = Math.sin(t * 0.45) * 0.05 + ty * 0.15;
+      /* horizontal spin — the coin turns like a revolving door: face, edge, chop, back around */
+      coin.rotation.y = t * 0.6;
+      coin.rotation.z = 0;
+      /* gentle sway + pointer influence on the stance */
+      tilt.rotation.x = -0.08 + Math.sin(t * 0.7) * 0.04 + tx * 0.18;
+      tilt.rotation.z = Math.sin(t * 0.45) * 0.03 + ty * 0.08;
       tilt.position.y = Math.sin(t * 1.1) * 0.045;
     } else {
-      coin.rotation.z = -0.4;
+      coin.rotation.y = -0.5;
     }
     renderer.render(scene, camera);
   }
