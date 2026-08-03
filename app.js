@@ -47,7 +47,7 @@
   var ticker = document.createElement("div");
   ticker.className = "ticker";
   ticker.innerHTML = '<div class="ticker-track"><div class="tgroup" id="tg1"><span class="titem">' +
-    (ZH ? "正在连线金库…" : "DIALING THE VAULT…") + '</span></div><div class="tgroup" id="tg2"></div></div>';
+    (ZH ? "正在读取底池…" : "READING THE POOL…") + '</span></div><div class="tgroup" id="tg2"></div></div>';
   if (header) header.insertAdjacentElement("afterend", ticker);
 
   function money(n) {
