@@ -204,6 +204,10 @@
   .defn .term .zh{font-size:30px;font-weight:900;}
   .defn .term .pinyin{font-style:italic;color:var(--ink-soft);}
   .defn .body{margin-top:10px;color:var(--ink-soft);font-size:15.5px;}
+  a.pull-link{display:block;color:inherit;text-decoration:none;}
+  a.pull-link .pull{transition:background .25s ease;}
+  a.pull-link:hover .pull{background:rgba(179,27,27,.05);}
+  a.pull-link .att .mono{color:var(--red);}
   .pull{
     border-left:3px solid var(--red);
     padding:6px 0 6px 30px;margin:8px 0 26px;
