@@ -217,6 +217,12 @@
   .mech-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:start;}
   .mech-diagram{border:1px solid var(--line-strong);padding:8px;background:var(--paper-deep);}
   .mech-diagram svg{display:block;width:100%;height:auto;}
+.mech-diagram svg.d-mob{display:none;}
+@media(max-width:700px){
+  .mech-diagram svg.d-desk{display:none;}
+  .mech-diagram svg.d-mob{display:block;max-width:430px;margin:0 auto;}
+  .mech-diagram{padding:14px 8px;}
+}
   .fig-cap{
     margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.14em;color:var(--ink-soft);line-height:1.7;text-transform:uppercase;

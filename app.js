@@ -125,8 +125,9 @@
   });
 
   /* ---------- mechanics diagram draws itself ---------- */
-  var svg = document.querySelector(".mech-diagram svg");
-  if (svg && !REDUCED) {
+  var mechSvgs = Array.prototype.slice.call(document.querySelectorAll(".mech-diagram svg"))
+    .filter(function (s) { return getComputedStyle(s).display !== "none"; });
+  if (!REDUCED) mechSvgs.forEach(function (svg) {
     var shapes = Array.prototype.slice.call(svg.querySelectorAll("path,rect,circle"));
     shapes.forEach(function (s) {
       if (s.closest("marker")) return;
@@ -139,24 +140,26 @@
     var texts = Array.prototype.slice.call(svg.querySelectorAll("text"));
     texts.forEach(function (t) { t.style.opacity = "0"; });
     svg.dataset.armed = "1";
-  }
+  });
 
   function playSvg() {
-    if (!svg || svg.dataset.played) return;
-    svg.dataset.played = "1";
-    var shapes = Array.prototype.slice.call(svg.querySelectorAll("path,rect,circle"));
-    var i = 0;
-    shapes.forEach(function (s) {
-      if (s.closest("marker")) return;
-      if (!s.style.strokeDasharray) return;
-      s.style.transition = "stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1) " + (i * 110) + "ms";
-      s.style.strokeDashoffset = "0";
-      i++;
-    });
-    var texts = Array.prototype.slice.call(svg.querySelectorAll("text"));
-    texts.forEach(function (t, k) {
-      t.style.transition = "opacity .6s ease " + (500 + k * 60) + "ms";
-      t.style.opacity = "1";
+    mechSvgs.forEach(function (svg) {
+      if (!svg.dataset.armed || svg.dataset.played) return;
+      svg.dataset.played = "1";
+      var shapes = Array.prototype.slice.call(svg.querySelectorAll("path,rect,circle"));
+      var i = 0;
+      shapes.forEach(function (s) {
+        if (s.closest("marker")) return;
+        if (!s.style.strokeDasharray) return;
+        s.style.transition = "stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1) " + (i * 110) + "ms";
+        s.style.strokeDashoffset = "0";
+        i++;
+      });
+      var texts = Array.prototype.slice.call(svg.querySelectorAll("text"));
+      texts.forEach(function (t, k) {
+        t.style.transition = "opacity .6s ease " + (500 + k * 60) + "ms";
+        t.style.opacity = "1";
+      });
     });
   }
 

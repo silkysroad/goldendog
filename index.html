@@ -368,7 +368,7 @@
       <div>
         <div class="mech-diagram">
           <!-- fine-line flow diagram -->
-          <svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono',monospace">
+          <svg class="d-desk" viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono',monospace">
             <defs>
               <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0,0 L10,5 L0,10" fill="none" stroke="#2E0C0D" stroke-width="1.2"/>
@@ -378,47 +378,94 @@
               </marker>
             </defs>
 
-            <!-- TRADE box -->
-            <rect x="40" y="40" width="170" height="64" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
-            <text x="125" y="67" text-anchor="middle" font-size="12" letter-spacing="2" fill="#2E0C0D">EVERY TRADE</text>
-            <text x="125" y="87" text-anchor="middle" font-size="10" fill="rgba(46,12,13,.55)">buys · sells · PancakeSwap</text>
+            <!-- TRADE -->
+            <rect x="36" y="36" width="184" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="128" y="66" text-anchor="middle" font-size="12" fill="#2E0C0D" textLength="110" lengthAdjust="spacing">EVERY TRADE</text>
+            <text x="128" y="88" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="150" lengthAdjust="spacingAndGlyphs">buys · sells · PancakeSwap</text>
 
-            <!-- TAX box -->
-            <rect x="430" y="40" width="170" height="64" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
-            <text x="515" y="67" text-anchor="middle" font-size="12" letter-spacing="2" fill="#2E0C0D">TAX SKIMMED</text>
-            <text x="515" y="87" text-anchor="middle" font-size="10" fill="rgba(46,12,13,.55)">FlapTaxToken V3 · on-chain</text>
+            <!-- TAX -->
+            <rect x="420" y="36" width="184" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="512" y="66" text-anchor="middle" font-size="12" fill="#2E0C0D" textLength="112" lengthAdjust="spacing">TAX SKIMMED</text>
+            <text x="512" y="88" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="152" lengthAdjust="spacingAndGlyphs">flap tax contract · on-chain</text>
 
-            <path d="M210,72 H430" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
-            <text x="320" y="62" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)">automatic, per swap</text>
+            <path d="M220,71 H420" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
+            <text x="320" y="61" text-anchor="middle" font-size="9" fill="rgba(46,12,13,.55)" textLength="118" lengthAdjust="spacingAndGlyphs">automatic, per swap</text>
 
             <!-- LIQUIDATE -->
-            <path d="M515,104 V180" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
-            <rect x="380" y="180" width="220" height="64" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
-            <text x="490" y="207" text-anchor="middle" font-size="12" letter-spacing="2" fill="#2E0C0D">LIQUIDATED → GOLD</text>
-            <text x="490" y="227" text-anchor="middle" font-size="10" fill="rgba(46,12,13,.55)">tax swapped into XAUt from the pool</text>
+            <path d="M512,106 V178" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
+            <rect x="374" y="178" width="230" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="489" y="208" text-anchor="middle" font-size="12" fill="#2E0C0D" textLength="168" lengthAdjust="spacing">LIQUIDATED → GOLD</text>
+            <text x="489" y="230" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="182" lengthAdjust="spacingAndGlyphs">tax swapped into XAUt · Tether Gold</text>
 
             <!-- GOLD POOL -->
-            <circle cx="150" cy="212" r="52" fill="none" stroke="#C0891A" stroke-width="1.6"/>
-            <circle cx="150" cy="212" r="42" fill="none" stroke="#C0891A" stroke-width=".7" opacity=".6"/>
-            <text x="150" y="205" text-anchor="middle" font-size="14" font-family="'Noto Serif SC',serif" font-weight="900" fill="#C0891A">黄金底池</text>
-            <text x="150" y="224" text-anchor="middle" font-size="9.5" fill="#C0891A">金狗 / XAUt POOL</text>
-            <path d="M380,212 H206" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
+            <circle cx="150" cy="213" r="54" fill="none" stroke="#C0891A" stroke-width="1.6"/>
+            <circle cx="150" cy="213" r="43" fill="none" stroke="#C0891A" stroke-width=".7" opacity=".6"/>
+            <text x="150" y="206" text-anchor="middle" font-size="14" fill="#C0891A" textLength="60" lengthAdjust="spacing" font-family="'Noto Serif SC',serif" font-weight="900">黄金底池</text>
+            <text x="150" y="226" text-anchor="middle" font-size="9" fill="#C0891A" textLength="76" lengthAdjust="spacingAndGlyphs">金狗 / XAUt POOL</text>
+            <path d="M374,213 H208" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
 
             <!-- AIRDROP -->
-            <path d="M490,244 V320" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
-            <rect x="330" y="320" width="270" height="76" fill="#C0891A" stroke="#C0891A"/>
-            <text x="465" y="352" text-anchor="middle" font-size="13" letter-spacing="2.5" fill="#F4EBD8">XAUt AIRDROPPED</text>
-            <text x="465" y="374" text-anchor="middle" font-size="10.5" fill="rgba(244,235,216,.85)">straight to every holder’s wallet</text>
+            <path d="M489,248 V318" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
+            <rect x="322" y="318" width="282" height="80" fill="#C0891A" stroke="#C0891A"/>
+            <text x="463" y="352" text-anchor="middle" font-size="13" fill="#F4EBD8" textLength="160" lengthAdjust="spacing">XAUt AIRDROPPED</text>
+            <text x="463" y="376" text-anchor="middle" font-size="10" fill="rgba(244,235,216,.85)" textLength="210" lengthAdjust="spacingAndGlyphs">straight to every holder’s wallet</text>
 
             <!-- HOLDER -->
-            <rect x="60" y="326" width="180" height="64" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
-            <text x="150" y="353" text-anchor="middle" font-size="12" letter-spacing="2" fill="#2E0C0D">YOU, HOLDING</text>
-            <text x="150" y="373" text-anchor="middle" font-size="10" fill="rgba(46,12,13,.55)">no claim · no staking · no button</text>
-            <path d="M330,358 H240" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
+            <rect x="44" y="322" width="200" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="144" y="352" text-anchor="middle" font-size="12" fill="#2E0C0D" textLength="118" lengthAdjust="spacing">YOU, HOLDING</text>
+            <text x="144" y="374" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="168" lengthAdjust="spacingAndGlyphs">no claim · no staking · no button</text>
+            <path d="M322,358 H244" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
 
             <!-- annotations -->
             <text x="40" y="140" font-size="9" letter-spacing="1.5" fill="rgba(46,12,13,.45)">FIG. 01 — THE CIRCUIT OF THE GOLDEN DOG</text>
             <text x="40" y="440" font-size="9" letter-spacing="1.5" fill="rgba(46,12,13,.45)">INK = TOKEN FLOW · GOLD = GOLD FLOW · NO HUMAN IN THE LOOP</text>
+          </svg>
+          <svg class="d-mob" viewBox="0 0 400 790" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono',monospace">
+            <defs>
+              <marker id="arr-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10" fill="none" stroke="#2E0C0D" stroke-width="1.2"/>
+              </marker>
+              <marker id="arrg-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10" fill="none" stroke="#C0891A" stroke-width="1.2"/>
+              </marker>
+            </defs>
+            <text x="30" y="28" font-size="10" letter-spacing="1.5" fill="rgba(46,12,13,.45)">FIG. 01 — THE CIRCUIT</text>
+
+            <rect x="66" y="46" width="268" height="78" fill="none" stroke="#2E0C0D" stroke-width="1.4"/>
+            <text x="200" y="80" text-anchor="middle" font-size="16" fill="#2E0C0D" textLength="150" lengthAdjust="spacing">EVERY TRADE</text>
+            <text x="200" y="104" text-anchor="middle" font-size="11" fill="rgba(46,12,13,.55)" textLength="196" lengthAdjust="spacingAndGlyphs">buys · sells · PancakeSwap</text>
+
+            <path d="M200,124 V172" stroke="#2E0C0D" stroke-width="1.3" marker-end="url(#arr-m)" fill="none"/>
+            <text x="214" y="152" font-size="10" fill="rgba(46,12,13,.55)" textLength="126" lengthAdjust="spacingAndGlyphs">automatic, per swap</text>
+
+            <rect x="66" y="174" width="268" height="78" fill="none" stroke="#2E0C0D" stroke-width="1.4"/>
+            <text x="200" y="208" text-anchor="middle" font-size="16" fill="#2E0C0D" textLength="152" lengthAdjust="spacing">TAX SKIMMED</text>
+            <text x="200" y="232" text-anchor="middle" font-size="11" fill="rgba(46,12,13,.55)" textLength="200" lengthAdjust="spacingAndGlyphs">flap tax contract · on-chain</text>
+
+            <path d="M200,252 V300" stroke="#2E0C0D" stroke-width="1.3" marker-end="url(#arr-m)" fill="none"/>
+            <text x="214" y="280" font-size="10" fill="rgba(46,12,13,.55)" textLength="120" lengthAdjust="spacingAndGlyphs">liquidated → gold</text>
+
+            <circle cx="200" cy="368" r="66" fill="none" stroke="#C0891A" stroke-width="1.8"/>
+            <circle cx="200" cy="368" r="53" fill="none" stroke="#C0891A" stroke-width=".8" opacity=".6"/>
+            <text x="200" y="362" text-anchor="middle" font-size="18" fill="#C0891A" textLength="76" lengthAdjust="spacing" font-family="'Noto Serif SC',serif" font-weight="900">黄金底池</text>
+            <text x="200" y="384" text-anchor="middle" font-size="10" fill="#C0891A" textLength="88" lengthAdjust="spacingAndGlyphs">金狗 / XAUt POOL</text>
+
+            <path d="M200,436 V484" stroke="#C0891A" stroke-width="1.3" marker-end="url(#arrg-m)" fill="none"/>
+            <text x="214" y="464" font-size="10" fill="#C0891A" textLength="142" lengthAdjust="spacingAndGlyphs">tax swapped into XAUt</text>
+
+            <rect x="56" y="486" width="288" height="88" fill="#C0891A" stroke="#C0891A"/>
+            <text x="200" y="524" text-anchor="middle" font-size="16" fill="#F4EBD8" textLength="185" lengthAdjust="spacing">XAUt AIRDROPPED</text>
+            <text x="200" y="550" text-anchor="middle" font-size="11" fill="rgba(244,235,216,.85)" textLength="216" lengthAdjust="spacingAndGlyphs">straight to every holder’s wallet</text>
+
+            <path d="M200,574 V622" stroke="#C0891A" stroke-width="1.3" marker-end="url(#arrg-m)" fill="none"/>
+            <text x="214" y="602" font-size="10" fill="#C0891A" textLength="132" lengthAdjust="spacingAndGlyphs">no claim · no staking</text>
+
+            <rect x="66" y="624" width="268" height="78" fill="none" stroke="#2E0C0D" stroke-width="1.4"/>
+            <text x="200" y="658" text-anchor="middle" font-size="16" fill="#2E0C0D" textLength="158" lengthAdjust="spacing">YOU, HOLDING</text>
+            <text x="200" y="682" text-anchor="middle" font-size="11" fill="rgba(46,12,13,.55)" textLength="176" lengthAdjust="spacingAndGlyphs">hold, and gold appears</text>
+
+            <text x="30" y="742" font-size="9.5" letter-spacing="1" fill="rgba(46,12,13,.45)" textLength="252" lengthAdjust="spacingAndGlyphs">INK = TOKEN FLOW · GOLD = GOLD FLOW</text>
+            <text x="30" y="760" font-size="9.5" letter-spacing="1" fill="rgba(46,12,13,.45)">NO HUMAN IN THE LOOP</text>
           </svg>
         </div>
         <p class="fig-cap">Fig. 01 — Volume in, <b>gold out.</b> The tax engine converts trading

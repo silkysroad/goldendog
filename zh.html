@@ -286,7 +286,7 @@
     <div class="mech-grid">
       <div>
         <div class="mech-diagram">
-          <svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif SC','IBM Plex Mono',monospace">
+          <svg class="d-desk" viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif SC','IBM Plex Mono',monospace">
             <defs>
               <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0,0 L10,5 L0,10" fill="none" stroke="#2E0C0D" stroke-width="1.2"/>
@@ -296,40 +296,87 @@
               </marker>
             </defs>
 
-            <rect x="40" y="40" width="170" height="64" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
-            <text x="125" y="67" text-anchor="middle" font-size="13" letter-spacing="3" fill="#2E0C0D" font-weight="900">每一笔交易</text>
-            <text x="125" y="87" text-anchor="middle" font-size="10" fill="rgba(46,12,13,.55)">买 · 卖 · PancakeSwap</text>
+            <rect x="36" y="36" width="184" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="128" y="66" text-anchor="middle" font-size="13" fill="#2E0C0D" textLength="92" lengthAdjust="spacing" font-weight="900">每一笔交易</text>
+            <text x="128" y="88" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="148" lengthAdjust="spacingAndGlyphs">买 · 卖 · PancakeSwap</text>
 
-            <rect x="430" y="40" width="170" height="64" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
-            <text x="515" y="67" text-anchor="middle" font-size="13" letter-spacing="3" fill="#2E0C0D" font-weight="900">链上抽税</text>
-            <text x="515" y="87" text-anchor="middle" font-size="10" fill="rgba(46,12,13,.55)">FlapTaxToken V3 · 合约执行</text>
+            <rect x="420" y="36" width="184" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="512" y="66" text-anchor="middle" font-size="13" fill="#2E0C0D" textLength="82" lengthAdjust="spacing" font-weight="900">链上抽税</text>
+            <text x="512" y="88" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="158" lengthAdjust="spacingAndGlyphs">FlapTaxToken V3 · 合约执行</text>
 
-            <path d="M210,72 H430" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
-            <text x="320" y="62" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)">每笔 swap 自动执行</text>
+            <path d="M220,71 H420" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
+            <text x="320" y="61" text-anchor="middle" font-size="9" fill="rgba(46,12,13,.55)" textLength="118" lengthAdjust="spacingAndGlyphs">每笔 swap 自动执行</text>
 
-            <path d="M515,104 V180" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
-            <rect x="380" y="180" width="220" height="64" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
-            <text x="490" y="207" text-anchor="middle" font-size="13" letter-spacing="3" fill="#2E0C0D" font-weight="900">税收 → 换成黄金</text>
-            <text x="490" y="227" text-anchor="middle" font-size="10" fill="rgba(46,12,13,.55)">税收从底池兑换为 XAUt</text>
+            <path d="M512,106 V178" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
+            <rect x="374" y="178" width="230" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="489" y="208" text-anchor="middle" font-size="13" fill="#2E0C0D" textLength="140" lengthAdjust="spacing" font-weight="900">税收 → 换成黄金</text>
+            <text x="489" y="230" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="168" lengthAdjust="spacingAndGlyphs">税收从底池兑换为 XAUt</text>
 
-            <circle cx="150" cy="212" r="52" fill="none" stroke="#C0891A" stroke-width="1.6"/>
-            <circle cx="150" cy="212" r="42" fill="none" stroke="#C0891A" stroke-width=".7" opacity=".6"/>
-            <text x="150" y="205" text-anchor="middle" font-size="14" font-weight="900" fill="#C0891A">黄金底池</text>
-            <text x="150" y="224" text-anchor="middle" font-size="9.5" fill="#C0891A">金狗 / XAUt POOL</text>
-            <path d="M380,212 H206" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
+            <circle cx="150" cy="213" r="54" fill="none" stroke="#C0891A" stroke-width="1.6"/>
+            <circle cx="150" cy="213" r="43" fill="none" stroke="#C0891A" stroke-width=".7" opacity=".6"/>
+            <text x="150" y="206" text-anchor="middle" font-size="14" fill="#C0891A" textLength="60" lengthAdjust="spacing" font-weight="900">黄金底池</text>
+            <text x="150" y="226" text-anchor="middle" font-size="9" fill="#C0891A" textLength="76" lengthAdjust="spacingAndGlyphs">金狗 / XAUt POOL</text>
+            <path d="M374,213 H208" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
 
-            <path d="M490,244 V320" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
-            <rect x="330" y="320" width="270" height="76" fill="#C0891A" stroke="#C0891A"/>
-            <text x="465" y="352" text-anchor="middle" font-size="14" letter-spacing="4" fill="#F4EBD8" font-weight="900">空投 XAUt</text>
-            <text x="465" y="374" text-anchor="middle" font-size="10.5" fill="rgba(244,235,216,.85)">直接打进每一个持有者的钱包</text>
+            <path d="M489,248 V318" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
+            <rect x="322" y="318" width="282" height="80" fill="#C0891A" stroke="#C0891A"/>
+            <text x="463" y="352" text-anchor="middle" font-size="14" fill="#F4EBD8" textLength="124" lengthAdjust="spacing" font-weight="900">空投 XAUt</text>
+            <text x="463" y="376" text-anchor="middle" font-size="10" fill="rgba(244,235,216,.85)" textLength="196" lengthAdjust="spacingAndGlyphs">直接打进每一个持有者的钱包</text>
 
-            <rect x="60" y="326" width="180" height="64" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
-            <text x="150" y="353" text-anchor="middle" font-size="13" letter-spacing="3" fill="#2E0C0D" font-weight="900">你，拿着不动</text>
-            <text x="150" y="373" text-anchor="middle" font-size="10" fill="rgba(46,12,13,.55)">不用领取 · 不用质押 · 不用点按钮</text>
-            <path d="M330,358 H240" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
+            <rect x="44" y="322" width="200" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="144" y="352" text-anchor="middle" font-size="13" fill="#2E0C0D" textLength="110" lengthAdjust="spacing" font-weight="900">你，拿着不动</text>
+            <text x="144" y="374" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="172" lengthAdjust="spacingAndGlyphs">不用领取 · 不用质押 · 不用点按钮</text>
+            <path d="M322,358 H244" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
 
             <text x="40" y="140" font-size="9" letter-spacing="1.5" fill="rgba(46,12,13,.45)">图 01 — 金狗回路</text>
             <text x="40" y="440" font-size="9" letter-spacing="1.5" fill="rgba(46,12,13,.45)">墨线 = 代币流 · 金线 = 黄金流 · 全程无人经手</text>
+          </svg>
+          <svg class="d-mob" viewBox="0 0 400 790" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif SC','IBM Plex Mono',monospace">
+            <defs>
+              <marker id="arr-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10" fill="none" stroke="#2E0C0D" stroke-width="1.2"/>
+              </marker>
+              <marker id="arrg-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10" fill="none" stroke="#C0891A" stroke-width="1.2"/>
+              </marker>
+            </defs>
+            <text x="30" y="28" font-size="10" letter-spacing="1.5" fill="rgba(46,12,13,.45)">图 01 — 金狗回路</text>
+
+            <rect x="66" y="46" width="268" height="78" fill="none" stroke="#2E0C0D" stroke-width="1.4"/>
+            <text x="200" y="80" text-anchor="middle" font-size="17" fill="#2E0C0D" textLength="120" lengthAdjust="spacing" font-weight="900">每一笔交易</text>
+            <text x="200" y="104" text-anchor="middle" font-size="11" fill="rgba(46,12,13,.55)" textLength="172" lengthAdjust="spacingAndGlyphs">买 · 卖 · PancakeSwap</text>
+
+            <path d="M200,124 V172" stroke="#2E0C0D" stroke-width="1.3" marker-end="url(#arr-m)" fill="none"/>
+            <text x="214" y="152" font-size="10.5" fill="rgba(46,12,13,.55)" textLength="130" lengthAdjust="spacingAndGlyphs">每笔 swap 自动抽税</text>
+
+            <rect x="66" y="174" width="268" height="78" fill="none" stroke="#2E0C0D" stroke-width="1.4"/>
+            <text x="200" y="208" text-anchor="middle" font-size="17" fill="#2E0C0D" textLength="100" lengthAdjust="spacing" font-weight="900">链上抽税</text>
+            <text x="200" y="232" text-anchor="middle" font-size="11" fill="rgba(46,12,13,.55)" textLength="192" lengthAdjust="spacingAndGlyphs">FlapTaxToken V3 · 合约执行</text>
+
+            <path d="M200,252 V300" stroke="#2E0C0D" stroke-width="1.3" marker-end="url(#arr-m)" fill="none"/>
+            <text x="214" y="280" font-size="10.5" fill="rgba(46,12,13,.55)" textLength="90" lengthAdjust="spacingAndGlyphs">税收换成黄金</text>
+
+            <circle cx="200" cy="368" r="66" fill="none" stroke="#C0891A" stroke-width="1.8"/>
+            <circle cx="200" cy="368" r="53" fill="none" stroke="#C0891A" stroke-width=".8" opacity=".6"/>
+            <text x="200" y="362" text-anchor="middle" font-size="18" fill="#C0891A" textLength="76" lengthAdjust="spacing" font-weight="900">黄金底池</text>
+            <text x="200" y="384" text-anchor="middle" font-size="10" fill="#C0891A" textLength="88" lengthAdjust="spacingAndGlyphs">金狗 / XAUt POOL</text>
+
+            <path d="M200,436 V484" stroke="#C0891A" stroke-width="1.3" marker-end="url(#arrg-m)" fill="none"/>
+            <text x="214" y="464" font-size="10.5" fill="#C0891A" textLength="96" lengthAdjust="spacingAndGlyphs">兑换为 XAUt</text>
+
+            <rect x="56" y="486" width="288" height="88" fill="#C0891A" stroke="#C0891A"/>
+            <text x="200" y="524" text-anchor="middle" font-size="17" fill="#F4EBD8" textLength="140" lengthAdjust="spacing" font-weight="900">空投 XAUt</text>
+            <text x="200" y="550" text-anchor="middle" font-size="11" fill="rgba(244,235,216,.85)" textLength="200" lengthAdjust="spacingAndGlyphs">直接打进持有者的钱包</text>
+
+            <path d="M200,574 V622" stroke="#C0891A" stroke-width="1.3" marker-end="url(#arrg-m)" fill="none"/>
+            <text x="214" y="602" font-size="10.5" fill="#C0891A" textLength="138" lengthAdjust="spacingAndGlyphs">不用领取 · 不用质押</text>
+
+            <rect x="66" y="624" width="268" height="78" fill="none" stroke="#2E0C0D" stroke-width="1.4"/>
+            <text x="200" y="658" text-anchor="middle" font-size="17" fill="#2E0C0D" textLength="140" lengthAdjust="spacing" font-weight="900">你，拿着不动</text>
+            <text x="200" y="682" text-anchor="middle" font-size="11" fill="rgba(46,12,13,.55)" textLength="110" lengthAdjust="spacingAndGlyphs">黄金自己来</text>
+
+            <text x="30" y="742" font-size="9.5" letter-spacing="1" fill="rgba(46,12,13,.45)">墨线 = 代币流 · 金线 = 黄金流</text>
+            <text x="30" y="760" font-size="9.5" letter-spacing="1" fill="rgba(46,12,13,.45)">全程无人经手</text>
           </svg>
         </div>
         <p class="fig-cap">图 01 — 交易量进，<b>黄金出。</b>税收引擎把交易活动转换为 XAUt，
