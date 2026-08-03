@@ -65,6 +65,8 @@
   .masthead nav{display:flex;gap:28px;}
   .masthead nav a{color:var(--ink-soft);text-decoration:none;}
   .masthead nav a:hover{color:var(--red);}
+  .masthead nav a.community{color:var(--red);font-weight:700;}
+  .masthead nav a.community:hover{color:var(--red-deep);}
 
   /* ---------- hero ---------- */
   .hero{
