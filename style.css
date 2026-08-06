@@ -796,3 +796,67 @@
     .kennel svg{width:32px;height:21px;}
     .kennel svg.yb{width:20px;height:12px;}
   }
+
+  /* ================================================================
+     THE PAYOUT RECORD — all-time gold paid out, counted in ingots
+     ================================================================ */
+  .payout-hero{text-align:center;padding:10px 0 6px;}
+  .payout-hero .smallcaps{color:var(--ink-soft);}
+  .paynum{
+    margin-top:14px;font-size:clamp(52px,9vw,110px);font-weight:400;
+    letter-spacing:-.03em;font-variant-numeric:lining-nums;line-height:1;
+    color:var(--gold);
+  }
+  .paynum i{font-style:normal;font-size:.34em;color:var(--ink-soft);letter-spacing:0;}
+  .pay-usd{
+    margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+  }
+
+  .ingot-wall{
+    display:flex;flex-wrap:wrap;gap:7px 9px;justify-content:center;
+    max-width:860px;margin:34px auto 0;min-height:20px;
+  }
+  .ingot-wall .ing{
+    width:31px;height:18px;color:var(--gold);display:block;
+    opacity:0;transform:translateY(9px) scale(.7);
+    transition:opacity .5s ease,transform .5s cubic-bezier(.2,.9,.3,1.35);
+  }
+  .ingot-wall.lit .ing{opacity:1;transform:none;}
+  .ingot-wall .ing.part{opacity:0;}
+  .ingot-wall.lit .ing.part{opacity:.32;}
+  .ingot-wall .ing.fresh{
+    opacity:1;transform:none;transition:none;
+    animation:mint .7s cubic-bezier(.2,.9,.3,1.5);
+  }
+  @keyframes mint{0%{opacity:0;transform:translateY(-14px) scale(1.6);}60%{opacity:1;}100%{opacity:1;transform:none;}}
+  .ingot-cap{text-align:center;margin-top:16px;color:var(--ink-faint);}
+
+  .pay-tiles{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0 34px;
+    max-width:980px;margin:44px auto 0;
+    border-top:2px solid var(--red);
+  }
+  .pay-tile{padding:20px 0 4px;border-left:1px solid var(--line);padding-left:26px;}
+  .pay-tile:first-child{border-left:0;padding-left:0;}
+  .pay-tile .pv{
+    margin-top:10px;font-size:clamp(24px,2.6vw,36px);font-weight:400;
+    letter-spacing:-.02em;font-variant-numeric:lining-nums;line-height:1.05;
+  }
+  .pay-tile .pv.goldnum{color:var(--gold);}
+  .pay-tile .pv i{font-style:normal;font-size:.5em;color:var(--ink-soft);}
+  .pay-tile .psub{margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);}
+  .pay-tile .psub a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--red);}
+
+  @media(max-width:900px){
+    .pay-tiles{grid-template-columns:repeat(2,1fr);gap:0 22px;}
+    .pay-tile{border-left:0;padding-left:0;border-top:1px solid var(--line);}
+    .pay-tile:nth-child(-n+2){border-top:0;}
+    .ingot-wall{gap:5px 7px;}
+    .ingot-wall .ing{width:24px;height:14px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .ingot-wall .ing{transition:none;opacity:1;transform:none;}
+    .ingot-wall .ing.fresh{animation:none;}
+  }

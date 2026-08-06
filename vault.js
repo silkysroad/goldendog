@@ -4,6 +4,7 @@
   var XAUT = '0x21caef8a43163eea865baee23b9c2e327696a3bf';
   var PAIR = '0x1ce038394b2e11ebd6d7cc44e7f98c9d195832f0';
   var TOKEN = '0xb5e29d5abefc2ede88d17d161d5b840174497777';
+  var DIV = '0x8244f4bbe2eb2ed76d5d92f09eb8af2c2f7012cb';   /* flap dividend vault — the contract that actually pays holders */
   var TRANSFER = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
   var RPCS = ['https://bsc-rpc.publicnode.com', 'https://bsc-mainnet.public.blastapi.io'];
   var LOGS_RPC = 'https://bsc-mainnet.public.blastapi.io'; /* 10-block windows, reliable */
@@ -80,11 +81,12 @@
     var from = '0x' + l.topics[1].slice(-40);
     var to = '0x' + l.topics[2].slice(-40);
     var f = from.toLowerCase(), t = to.toLowerCase();
-    if (f !== PAIR && t !== PAIR && f !== TOKEN && t !== TOKEN) return null;
+    if (f !== PAIR && t !== PAIR && f !== DIV && t !== DIV) return null;
     var dir;
-    if (f === TOKEN) dir = 'drop';           /* contract paying holders — the event */
+    if (f === DIV) dir = 'drop';             /* dividend vault paying a holder — the real payout */
+    else if (t === DIV) dir = 'fill';        /* tax revenue landing in the vault */
     else if (t === PAIR) dir = 'in';         /* gold entering the pool (buys) */
-    else if (f === PAIR) dir = 'out';        /* gold leaving the pool (sells / reward route) */
+    else if (f === PAIR) dir = 'out';        /* gold leaving the pool (sells) */
     else dir = 'in';
     return {
       block: parseInt(l.blockNumber, 16),
@@ -120,7 +122,8 @@
   }
 
   function labelFor(r) {
-    if (r.dir === 'drop') return ZH ? '分金 · 空投给持有者' : 'GOLD DROP · to holders';
+    if (r.dir === 'drop') return ZH ? '分金 · 派给持有者' : 'GOLD DROP · to holder';
+    if (r.dir === 'fill') return ZH ? '入库 · 税入金库' : 'VAULT FILL · tax in';
     if (r.dir === 'in') return ZH ? '入池 · 买狗' : 'GOLD IN · buy';
     return ZH ? '出池 · 卖狗' : 'GOLD OUT · sell';
   }
@@ -129,12 +132,12 @@
     rows.sort(function (a, b) { return b.block - a.block; });
     var top = rows.slice(0, 14);
     elLedger.innerHTML = top.map(function (r) {
-      var cls = r.dir === 'drop' ? 'drop' : r.dir;
-      var sign = r.dir === 'in' ? '+' : '−';
+      var cls = r.dir === 'drop' ? 'drop' : (r.dir === 'fill' ? 'in' : r.dir);
+      var sign = (r.dir === 'in' || r.dir === 'fill') ? '+' : '−';
       return '<li class="lrow ' + cls + '">' +
         '<span class="ldir">' + labelFor(r) + '</span>' +
         '<span class="loz">' + sign + ' ' + r.oz.toFixed(4) + ' <i>oz</i></span>' +
-        '<span class="lwho mono">' + short(r.dir === 'in' ? r.from : r.to) + '</span>' +
+        '<span class="lwho mono">' + short((r.dir === 'in' || r.dir === 'fill') ? r.from : r.to) + '</span>' +
         '<span class="lts">' + ago(r.ts) + '</span>' +
         '<a class="ltx mono" href="https://bscscan.com/tx/' + r.tx + '" target="_blank" rel="noopener">tx ↗</a>' +
         '</li>';
@@ -158,6 +161,7 @@
       if (seen[k]) return;
       seen[k] = 1;
       rows.push(r); added.push(r);
+      if (window.__goldLive) { try { window.__goldLive(r); } catch (e) {} }
     });
     if (!added.length) return;
     Promise.all(added.map(function (r) {

@@ -230,6 +230,7 @@
         <a href="#mechanics">机制</a>
         <a href="#gold">真金</a>
         <a href="#vault">底池</a>
+        <a href="#alltime">分金</a>
         <a href="#chart">走势</a>
         <a href="https://x.com/i/communities/2019254401861362177" target="_blank" rel="noopener" class="community">X 社群 <span class="mono">→</span></a>
       </nav>
@@ -636,10 +637,56 @@
     任何一行都可对照 <b>BscScan</b>。狗不记账。账，在链上。链上为证。</p>
   </section>
 
-  <!-- ================= 五、走势 ================= -->
-  <section id="chart" style="border-bottom:1px solid var(--line)">
+  <!-- ================= 五、分金总账 ================= -->
+  <section id="alltime">
     <div class="sec-head">
       <span class="no">— 五</span>
+      <h3>分金总账</h3>
+      <span class="live-pill smallcaps"><i></i>创世至今 · 全量统计</span>
+      <span class="sec-medal"><svg><use href="#orn-photo-med"/></svg></span>
+      <span class="zh-tag">The Payout Record</span>
+    </div>
+
+    <div class="payout-hero">
+      <p class="smallcaps">金库付给持有者的黄金 · 开张以来</p>
+      <div class="paynum"><span id="at-oz">0.00</span><i> 盎司</i></div>
+      <p class="pay-usd" id="at-usd">正在清点盎司…</p>
+      <div class="ingot-wall" id="ingot-wall" aria-hidden="true"></div>
+      <p class="ingot-cap smallcaps" id="ingot-cap">正在称量金锭…</p>
+    </div>
+
+    <div class="pay-tiles">
+      <div class="pay-tile">
+        <p class="smallcaps">已结清分金</p>
+        <div class="pv goldnum"><span id="at-n">…</span><i> 笔</i></div>
+        <p class="psub">每一笔都在 BscScan</p>
+      </div>
+      <div class="pay-tile">
+        <p class="smallcaps">收金钱包</p>
+        <div class="pv goldnum"><span id="at-w">…</span><i> 个</i></div>
+        <p class="psub">拿到真金的独立地址</p>
+      </div>
+      <div class="pay-tile">
+        <p class="smallcaps">单笔最阔一次</p>
+        <div class="pv goldnum"><span id="at-big">…</span><i> 盎司</i></div>
+        <p class="psub"><a id="at-big-tx" href="#" target="_blank" rel="noopener">看凭证 ↗</a></p>
+      </div>
+      <div class="pay-tile">
+        <p class="smallcaps">吞入黄金 · 累计</p>
+        <div class="pv goldnum"><span id="at-in">…</span><i> 盎司</i></div>
+        <p class="psub">狗吞进的，比吐出的多</p>
+      </div>
+    </div>
+
+    <p class="fig-cap" style="margin-top:26px">图 05 — 以上每一盎司，都已离开金库、落进持有者的钱包，
+    在 BNB Chain 上结清。狗不许诺黄金，狗已经付了。
+    总账每小时与链上对一次；两次对账之间，实时账本继续计数。已付，链上为证。</p>
+  </section>
+
+  <!-- ================= 六、走势 ================= -->
+  <section id="chart" style="border-bottom:1px solid var(--line)">
+    <div class="sec-head">
+      <span class="no">— 六</span>
       <h3>走势</h3>
       <span class="sec-medal"><svg><use href="#orn-zodiac"/></svg></span>
       <span class="zh-tag">The Chart</span>
@@ -647,7 +694,7 @@
     <div class="chart-wrap">
       <iframe src="https://dexscreener.com/bsc/0x1CE038394B2E11ebd6D7Cc44E7F98c9D195832f0?embed=1&amp;theme=light&amp;chartTheme=light&amp;trades=0&amp;info=0&amp;tabs=0&amp;chartLeftToolbar=0&amp;loadChartSettings=0&amp;chartType=usd&amp;interval=15" title="金狗实时走势"></iframe>
     </div>
-    <p class="fig-cap" style="margin-top:16px">图 05 — DexScreener 实时数据。编辑部不预测未来，只分发黄金。</p>
+    <p class="fig-cap" style="margin-top:16px">图 06 — DexScreener 实时数据。编辑部不预测未来，只分发黄金。</p>
   </section>
 
   <!-- ================= 页脚 ================= -->
@@ -722,6 +769,7 @@ function copyCA(btn){
 <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
 <script src="app.js" defer></script>
 <script src="vault.js" defer></script>
+<script src="alltime.js" defer></script>
 <script type="importmap">
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
 </script>

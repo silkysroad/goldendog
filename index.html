@@ -322,6 +322,7 @@
         <a href="#mechanics">Mechanics</a>
         <a href="#gold">The Gold</a>
         <a href="#vault">The Pool</a>
+        <a href="#alltime">The Record</a>
         <a href="#chart">Chart</a>
         <a href="https://x.com/i/communities/2019254401861362177" target="_blank" rel="noopener" class="community">X Community <span class="mono">→</span></a>
       </nav>
@@ -744,10 +745,56 @@
     The chain keeps them for him. 链上为证.</p>
   </section>
 
+  <!-- ================= PAYOUT RECORD ================= -->
+  <section id="alltime">
+    <div class="sec-head">
+      <span class="no">— V</span>
+      <h3>The Payout Record</h3>
+      <span class="live-pill smallcaps"><i></i>All time · since genesis</span>
+      <span class="sec-medal"><svg><use href="#orn-photo-med"/></svg></span>
+      <span class="zh-tag">分金总账</span>
+    </div>
+
+    <div class="payout-hero">
+      <p class="smallcaps">Gold the vault has paid out to holders · all time</p>
+      <div class="paynum"><span id="at-oz">0.00</span><i> oz</i></div>
+      <p class="pay-usd" id="at-usd">counting the ounces…</p>
+      <div class="ingot-wall" id="ingot-wall" aria-hidden="true"></div>
+      <p class="ingot-cap smallcaps" id="ingot-cap">weighing the ingots…</p>
+    </div>
+
+    <div class="pay-tiles">
+      <div class="pay-tile">
+        <p class="smallcaps">Payouts settled</p>
+        <div class="pv goldnum"><span id="at-n">…</span></div>
+        <p class="psub">every one on BscScan</p>
+      </div>
+      <div class="pay-tile">
+        <p class="smallcaps">Wallets paid</p>
+        <div class="pv goldnum"><span id="at-w">…</span></div>
+        <p class="psub">distinct addresses holding gold</p>
+      </div>
+      <div class="pay-tile">
+        <p class="smallcaps">Richest single payout</p>
+        <div class="pv goldnum"><span id="at-big">…</span><i> oz</i></div>
+        <p class="psub"><a id="at-big-tx" href="#" target="_blank" rel="noopener">the receipt ↗</a></p>
+      </div>
+      <div class="pay-tile">
+        <p class="smallcaps">Gold swallowed · all time</p>
+        <div class="pv goldnum"><span id="at-in">…</span><i> oz</i></div>
+        <p class="psub">the dog takes in more than he pays</p>
+      </div>
+    </div>
+
+    <p class="fig-cap" style="margin-top:26px">Fig. 05 — Every ounce above left the vault and landed in a
+    holder's wallet, settled on BNB Chain. The dog does not promise gold. He has already paid it.
+    Totals reconciled against the chain on the hour; the live ledger keeps counting between audits. 已付，链上为证.</p>
+  </section>
+
   <!-- ================= CHART ================= -->
   <section id="chart" style="border-bottom:1px solid var(--line)">
     <div class="sec-head">
-      <span class="no">— V</span>
+      <span class="no">— VI</span>
       <h3>The Chart</h3>
       <span class="sec-medal"><svg><use href="#orn-zodiac"/></svg></span>
       <span class="zh-tag">走势</span>
@@ -755,7 +802,7 @@
     <div class="chart-wrap">
       <iframe src="https://dexscreener.com/bsc/0x1CE038394B2E11ebd6D7Cc44E7F98c9D195832f0?embed=1&amp;theme=light&amp;chartTheme=light&amp;trades=0&amp;info=0&amp;tabs=0&amp;chartLeftToolbar=0&amp;loadChartSettings=0&amp;chartType=usd&amp;interval=15" title="金狗 live chart"></iframe>
     </div>
-    <p class="fig-cap" style="margin-top:16px">Fig. 05 — Live via DexScreener. The editorial team does not predict the future; it only distributes gold.</p>
+    <p class="fig-cap" style="margin-top:16px">Fig. 06 — Live via DexScreener. The editorial team does not predict the future; it only distributes gold.</p>
   </section>
 
   <!-- ================= FOOTER ================= -->
@@ -831,6 +878,7 @@ function copyCA(btn){
 <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
 <script src="app.js" defer></script>
 <script src="vault.js" defer></script>
+<script src="alltime.js" defer></script>
 <script type="importmap">
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
 </script>
