@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,600;9..144,700&family=Noto+Serif+SC:wght@600;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EBD8; --paper-deep:#EDE1C6; --ink:#2E0C0D;
+    --ink-soft:rgba(46,12,13,.66); --line:rgba(140,31,35,.30);
+    --red:#A6252A; --red-deep:#8C1F23; --gold:#C0891A; --gold-bright:#E2B24A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1600px;height:900px;overflow:hidden;}
+  body{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='560'%3E%3Cg fill='%23A6252A' fill-opacity='.055'%3E%3Cpath d='M40,60 C44,44 58,36 74,40 C70,56 56,64 40,60 Z'/%3E%3Cpath d='M420,90 C412,76 416,60 430,52 C438,66 434,82 420,90 Z'/%3E%3Cpath d='M240,300 C244,284 258,276 274,280 C270,296 256,304 240,300 Z'/%3E%3Cpath d='M90,430 C82,416 86,400 100,392 C108,406 104,422 90,430 Z'/%3E%3Cpath d='M480,380 C484,364 498,356 514,360 C510,376 496,384 480,380 Z'/%3E%3C/g%3E%3Cg fill='%23C0891A' fill-opacity='.07'%3E%3Cpath d='M180,150 C172,136 176,120 190,112 C198,126 194,142 180,150 Z'/%3E%3Cpath d='M360,210 C364,194 378,186 394,190 C390,206 376,214 360,210 Z'/%3E%3Cpath d='M300,480 C292,466 296,450 310,442 C318,456 314,472 300,480 Z'/%3E%3Cpath d='M500,20 C504,4 518,-4 534,0 C530,16 516,24 500,20 Z'/%3E%3Cpath d='M30,250 C34,234 48,226 64,230 C60,246 46,254 30,250 Z'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(var(--paper),var(--paper));
+    background-size:560px 560px,auto;
+    background-color:var(--paper);
+    color:var(--ink);
+    font-family:'Fraunces',serif;font-weight:340;
+    border-top:16px solid var(--red);
+    box-shadow:inset 0 16px 0 -12px var(--gold);
+    position:relative;
+  }
+  body::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:var(--red);box-shadow:0 -4px 0 var(--gold);}
+  .smallcaps{font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;white-space:nowrap;}
+  .issue{position:absolute;top:44px;left:0;right:0;display:flex;justify-content:center;}
+
+  .couplet{
+    position:absolute;top:236px;height:430px;
+    writing-mode:vertical-rl;text-align:center;
+    font-family:'Noto Serif SC',serif;font-weight:600;
+    font-size:30px;letter-spacing:.30em;color:var(--red);
+    background:rgba(166,37,42,.06);border:1px solid var(--line);
+    padding:22px 12px;
+  }
+  .couplet.cl{left:66px;}
+  .couplet.cr{right:66px;}
+
+  .head{position:absolute;top:92px;left:0;right:0;text-align:center;}
+  .head .zh{font-family:'Noto Serif SC',serif;font-weight:900;font-size:58px;letter-spacing:.10em;}
+  .head .zh .g{color:var(--gold);} .head .zh .r{color:var(--red);}
+  .head .en{margin-top:8px;font-family:'Fraunces',serif;font-weight:700;font-size:33px;color:var(--ink);}
+
+  .duo{position:absolute;left:50%;top:270px;transform:translateX(-50%);display:flex;align-items:stretch;gap:0;width:1180px;}
+  .stat{flex:1;text-align:center;padding:36px 10px 30px;}
+  .stat .zh-label{font-family:'Noto Serif SC',serif;font-weight:600;font-size:30px;color:var(--red);letter-spacing:.14em;}
+  .stat .num{margin-top:16px;font-family:'Fraunces',serif;font-weight:700;font-size:150px;line-height:1;color:var(--gold);text-shadow:0 2px 0 rgba(140,31,35,.12);}
+  .stat .num i{font-style:normal;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:44px;letter-spacing:.04em;color:var(--red-deep);}
+  .stat .en-label{margin-top:16px;font-family:'Fraunces',serif;font-weight:600;font-size:28px;color:var(--ink);}
+  .stat .sub{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);}
+  .divider{width:1px;background:var(--line);margin:26px 0;position:relative;}
+  .divider::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;background:var(--paper);border:1px solid var(--line);border-radius:50%;}
+  .divider::after{content:"金";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Noto Serif SC',serif;font-weight:900;font-size:24px;color:var(--red);}
+
+  .band{position:absolute;left:50%;bottom:130px;transform:translateX(-50%);text-align:center;width:1100px;}
+  .band .zh{font-family:'Noto Serif SC',serif;font-weight:600;font-size:26px;color:var(--red-deep);letter-spacing:.16em;}
+  .band .en{margin-top:6px;font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:var(--ink-soft);}
+
+  .stamp{
+    position:absolute;left:64px;bottom:44px;transform:rotate(-3deg);
+    font-family:'Noto Serif SC',serif;font-weight:900;font-size:24px;color:var(--red);
+    border:3px solid var(--red);padding:8px 13px;letter-spacing:.18em;opacity:.85;
+  }
+  .site{position:absolute;right:64px;bottom:56px;transform:rotate(2deg);font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  .foot{position:absolute;bottom:48px;left:0;right:0;display:flex;justify-content:center;}
+  .foot .smallcaps{font-size:13.5px;letter-spacing:.22em;}
+</style></head>
+<body>
+  <div class="issue"><span class="smallcaps">The Payout Record · All Time · Since Genesis · On BNB Chain</span></div>
+
+  <span class="couplet cl">打狗人空手而归</span>
+  <span class="couplet cr">持狗者坐等分金</span>
+
+  <div class="head">
+    <div class="zh"><span class="g">真金</span><span class="r">到手</span></div>
+    <div class="en">Real Gold. Real Wallets.</div>
+  </div>
+
+  <div class="duo">
+    <div class="stat">
+      <div class="zh-label">收金钱包</div>
+      <div class="num">948</div>
+      <div class="en-label">unique wallets paid in gold</div>
+      <div class="sub">they held. gold arrived.</div>
+    </div>
+    <div class="divider"></div>
+    <div class="stat">
+      <div class="zh-label">已派真金</div>
+      <div class="num">3.55<i> oz</i></div>
+      <div class="en-label">of real gold paid out · ≈ $15,177</div>
+      <div class="sub">xaut · 110.4 grams · all time</div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="zh">九百四十八个钱包，三点五五盎司真金，链上笔笔可查</div>
+    <div class="en">948 wallets. 3.55 oz of gold. Every payout verifiable on BscScan.</div>
+  </div>
+
+  <div class="stamp">链上为证</div>
+  <div class="site">jingou.gold</div>
+
+  <div class="foot"><span class="smallcaps">真金不怕火炼 · The dog does not promise gold. He has already paid it.</span></div>
+</body></html>

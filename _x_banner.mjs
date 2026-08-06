@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer-core';
+const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new' });
+const page = await browser.newPage();
+await page.setViewport({ width: 1500, height: 500, deviceScaleFactor: 1 });
+await page.goto('file://' + process.cwd() + '/_x_banner.html', { waitUntil: 'networkidle2', timeout: 45000 }).catch(()=>{});
+await new Promise(r => setTimeout(r, 2500));
+await page.screenshot({ path: '_x_banner.png' });
+await browser.close();
+console.log('done');
