@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金狗 — The Golden Dog · 真金不怕火炼 · Real Gold Fears No Fire</title>
+<meta name="description" content="真金不怕火炼 — real gold fears no fire. 金狗 (jīn gǒu): every trade on BNB Chain mints rewards in XAUt, Tether Gold, delivered straight to holders. No staking. No claiming.">
+<meta property="og:title" content="金狗 — The Golden Dog">
+<meta property="og:description" content="真金不怕火炼 · Real gold fears no fire. Every trade earns rewards. The rewards become gold. The gold lands in every holder's wallet.">
+<meta property="og:image" content="https://jingou.gold/og_card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="金狗 — The Golden Dog">
+<meta name="twitter:image" content="https://jingou.gold/og_card.jpg">
+<meta property="og:url" content="https://jingou.gold/en.html">
+<link rel="alternate" hreflang="zh-CN" href="https://jingou.gold/">
+<link rel="alternate" hreflang="en" href="https://jingou.gold/en.html">
+<link rel="alternate" hreflang="x-default" href="https://jingou.gold/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="金狗">
+<meta name="twitter:site" content="@GoldenDogBSC">
+<meta name="twitter:creator" content="@GoldenDogBSC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#A6252A">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0,1&family=Noto+Serif+SC:wght@400;600;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="reg tl"></div><div class="reg tr"></div><div class="reg bl"></div><div class="reg br"></div>
+
+<!-- ============ ORNAMENT SPRITE — dogs, medallions, clouds ============ -->
+<svg class="orn-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <path id="orn-ringpath" d="M100,22 a78,78 0 1,1 -0.01,0"/>
+    <clipPath id="orn-photo-clip"><circle cx="100" cy="100" r="54"/></clipPath>
+  </defs>
+
+  <!-- the standing golden dog — shiba silhouette after Plate 01: long muzzle, pricked ears, chest ruff, tucked waist, tail curled on the back -->
+  <symbol id="orn-dog" viewBox="0 0 100 78">
+    <path fill="currentColor" d="M4,19
+      L13,12 L16,11
+      L18,1 L25,9
+      L28,9
+      L31,8 L36,0 L41,9
+      Q45,11 47,15
+      Q51,19 58,18
+      L72,17
+      Q82,18 86,23
+      L89,33
+      Q90,41 86,46
+      L89,59 L92,74 L85,74 L82,60 L79,50
+      L76,53 L76,74 L69,74 L70,51
+      Q62,46 54,47
+      L46,49
+      L45,74 L39,74 L38,51
+      L34,51
+      L33,74 L26,74 L25,51
+      Q24,42 22,36
+      Q18,29 12,27
+      Q6,26 3,24
+      Z
+      M68,15 a12,12 0 1,1 24,0.01 a12,12 0 1,1 -24,-0.01 Z
+      M75,10 a5,5 0 1,0 10,-0.01 a5,5 0 1,0 -10,0.01 Z"/>
+  </symbol>
+
+  <!-- the meander ring, set in actual 回 characters -->
+  <symbol id="orn-ring" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2.6"/>
+    <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="1"/>
+    <text font-family="'Noto Serif SC',serif" font-size="14.5" font-weight="600" fill="currentColor">
+      <textPath href="#orn-ringpath" textLength="486" lengthAdjust="spacingAndGlyphs">回回回回回回回回回回回回回回回回回回回回回回回回回回回回</textPath>
+    </text>
+    <circle cx="100" cy="100" r="64" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <circle cx="100" cy="100" r="59" fill="none" stroke="currentColor" stroke-width=".8"/>
+  </symbol>
+
+  <!-- zodiac medallion: standing dog in the meander ring -->
+  <symbol id="orn-zodiac" viewBox="0 0 200 200">
+    <use href="#orn-ring" width="200" height="200"/>
+    <use href="#orn-dog" x="57" y="66" width="86" height="67"/>
+  </symbol>
+
+  <!-- the dog himself, Plate 01, struck into the meander ring -->
+  <symbol id="orn-photo-med" viewBox="0 0 200 200">
+    <use href="#orn-ring" width="200" height="200"/>
+    <image href="golden_dog_plate.jpg" x="46" y="46" width="108" height="108" preserveAspectRatio="xMidYMid slice" clip-path="url(#orn-photo-clip)"/>
+  </symbol>
+
+  <!-- the shiba chop face, line art, 狗 in the mouth -->
+  <symbol id="orn-face" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50,78 L36,24 Q37,18 43,21 L88,46"/>
+      <path d="M56,64 L49,38 L74,52" stroke-width="3.5"/>
+      <path d="M150,78 L164,24 Q163,18 157,21 L112,46"/>
+      <path d="M144,64 L151,38 L126,52" stroke-width="3.5"/>
+      <path d="M88,46 Q100,40 112,46"/>
+      <path d="M50,78 Q40,92 44,104 Q48,116 64,121"/>
+      <path d="M150,78 Q160,92 156,104 Q152,116 136,121"/>
+      <path d="M56,96 l11,-3 M58,105 l11,-3" stroke-width="3"/>
+      <path d="M144,96 l-11,-3 M142,105 l-11,-3" stroke-width="3"/>
+      <path d="M100,104 v7 M100,111 q-7,9 -16,5 M100,111 q7,9 16,5" stroke-width="4"/>
+      <path d="M64,121 Q58,164 100,168 Q142,164 136,121 Q126,110 100,112 Q74,110 64,121 Z"/>
+    </g>
+    <circle cx="74" cy="84" r="5.5" fill="currentColor"/>
+    <circle cx="126" cy="84" r="5.5" fill="currentColor"/>
+    <path d="M92,94 h16 l-8,10 Z" fill="currentColor" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+    <text x="100" y="153" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="30" font-weight="900" fill="currentColor">狗</text>
+  </symbol>
+
+  <!-- face chop in the meander ring -->
+  <symbol id="orn-face-med" viewBox="0 0 200 200">
+    <use href="#orn-ring" width="200" height="200"/>
+    <use href="#orn-face" x="30" y="30" width="140" height="140"/>
+  </symbol>
+
+  <!-- burst rays — the zodiac poster sunburst -->
+  <symbol id="orn-burst" viewBox="0 0 200 200">
+    <g fill="currentColor">
+      <g id="b-l"><path d="M100,44 L95.4,4 L104.6,4 Z"/></g>
+      <use href="#b-l" transform="rotate(15 100 100)"/><use href="#b-l" transform="rotate(30 100 100)"/><use href="#b-l" transform="rotate(45 100 100)"/><use href="#b-l" transform="rotate(60 100 100)"/><use href="#b-l" transform="rotate(75 100 100)"/><use href="#b-l" transform="rotate(90 100 100)"/><use href="#b-l" transform="rotate(105 100 100)"/><use href="#b-l" transform="rotate(120 100 100)"/><use href="#b-l" transform="rotate(135 100 100)"/><use href="#b-l" transform="rotate(150 100 100)"/><use href="#b-l" transform="rotate(165 100 100)"/><use href="#b-l" transform="rotate(180 100 100)"/><use href="#b-l" transform="rotate(195 100 100)"/><use href="#b-l" transform="rotate(210 100 100)"/><use href="#b-l" transform="rotate(225 100 100)"/><use href="#b-l" transform="rotate(240 100 100)"/><use href="#b-l" transform="rotate(255 100 100)"/><use href="#b-l" transform="rotate(270 100 100)"/><use href="#b-l" transform="rotate(285 100 100)"/><use href="#b-l" transform="rotate(300 100 100)"/><use href="#b-l" transform="rotate(315 100 100)"/><use href="#b-l" transform="rotate(330 100 100)"/><use href="#b-l" transform="rotate(345 100 100)"/>
+      <g id="b-s"><path d="M100,42 L97.2,16 L102.8,16 Z" opacity=".55"/></g>
+      <use href="#b-s" transform="rotate(15 100 100)"/><use href="#b-s" transform="rotate(30 100 100)"/><use href="#b-s" transform="rotate(45 100 100)"/><use href="#b-s" transform="rotate(60 100 100)"/><use href="#b-s" transform="rotate(75 100 100)"/><use href="#b-s" transform="rotate(90 100 100)"/><use href="#b-s" transform="rotate(105 100 100)"/><use href="#b-s" transform="rotate(120 100 100)"/><use href="#b-s" transform="rotate(135 100 100)"/><use href="#b-s" transform="rotate(150 100 100)"/><use href="#b-s" transform="rotate(165 100 100)"/><use href="#b-s" transform="rotate(180 100 100)"/><use href="#b-s" transform="rotate(195 100 100)"/><use href="#b-s" transform="rotate(210 100 100)"/><use href="#b-s" transform="rotate(225 100 100)"/><use href="#b-s" transform="rotate(240 100 100)"/><use href="#b-s" transform="rotate(255 100 100)"/><use href="#b-s" transform="rotate(270 100 100)"/><use href="#b-s" transform="rotate(285 100 100)"/><use href="#b-s" transform="rotate(300 100 100)"/><use href="#b-s" transform="rotate(315 100 100)"/><use href="#b-s" transform="rotate(330 100 100)"/><use href="#b-s" transform="rotate(345 100 100)"/>
+    </g>
+  </symbol>
+
+  <!-- plum blossom, paper-cut -->
+  <symbol id="orn-blossom" viewBox="0 0 44 44">
+    <g fill="currentColor">
+      <circle cx="22" cy="9" r="8"/><circle cx="34.4" cy="18" r="8"/><circle cx="29.6" cy="32.6" r="8"/><circle cx="14.4" cy="32.6" r="8"/><circle cx="9.6" cy="18" r="8"/>
+    </g>
+    <circle cx="22" cy="21" r="4.6" fill="var(--paper)" opacity=".9"/>
+    <circle cx="22" cy="21" r="1.8" fill="currentColor"/>
+  </symbol>
+
+  <!-- falling petal + scattered field -->
+  <symbol id="orn-petal" viewBox="0 0 20 26">
+    <path fill="currentColor" d="M10,1 Q19,9 10,25 Q1,9 10,1 Z"/>
+  </symbol>
+  <symbol id="orn-petals" viewBox="0 0 400 300">
+    <g fill="currentColor">
+      <use href="#orn-petal" x="20" y="30" width="14" height="18" transform="rotate(25 27 39)"/>
+      <use href="#orn-petal" x="90" y="200" width="11" height="15" transform="rotate(-40 95 207)"/>
+      <use href="#orn-petal" x="170" y="60" width="9" height="12" transform="rotate(70 174 66)"/>
+      <use href="#orn-petal" x="250" y="180" width="13" height="17" transform="rotate(-15 256 188)"/>
+      <use href="#orn-petal" x="330" y="40" width="12" height="16" transform="rotate(50 336 48)"/>
+      <use href="#orn-petal" x="360" y="230" width="10" height="13" transform="rotate(-65 365 236)"/>
+      <use href="#orn-petal" x="60" y="120" width="8" height="11" transform="rotate(110 64 125)"/>
+      <use href="#orn-petal" x="300" y="110" width="9" height="12" transform="rotate(-95 304 116)"/>
+      <use href="#orn-petal" x="140" y="250" width="12" height="16" transform="rotate(35 146 258)"/>
+      <use href="#orn-petal" x="220" y="20" width="10" height="13" transform="rotate(-30 225 26)"/>
+    </g>
+  </symbol>
+
+  <!-- dog nº2: same shiba, one forepaw raised mid-trot, floral cutouts on shoulder & haunch -->
+  <symbol id="orn-dog2" viewBox="0 0 100 78">
+    <path fill="currentColor" d="M4,19
+      L13,12 L16,11
+      L18,1 L25,9
+      L28,9
+      L31,8 L36,0 L41,9
+      Q45,11 47,15
+      Q51,19 58,18
+      L72,17
+      Q82,18 86,23
+      L89,33
+      Q90,41 86,46
+      L89,59 L92,74 L85,74 L82,60 L79,50
+      L76,53 L76,74 L69,74 L70,51
+      Q62,46 54,47
+      L46,49
+      L46,55 Q45,63 38,63 L37,57 Q40,56 40,51
+      L34,51
+      L33,74 L26,74 L25,51
+      Q24,42 22,36
+      Q18,29 12,27
+      Q6,26 3,24
+      Z
+      M68,15 a12,12 0 1,1 24,0.01 a12,12 0 1,1 -24,-0.01 Z
+      M75,10 a5,5 0 1,0 10,-0.01 a5,5 0 1,0 -10,0.01 Z
+      M70,31 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M75,37 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M65,37 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M70,43 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M26,30 a3,3 0 1,0 6,-0.01 a3,3 0 1,0 -6,0.01 Z
+      M34,36 a2.5,2.5 0 1,0 5,-0.01 a2.5,2.5 0 1,0 -5,0.01 Z"/>
+  </symbol>
+
+  <!-- tick ring (stamp style) + zodiac medallion nº2 -->
+  <symbol id="orn-ring2" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2.6"/>
+    <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="1"/>
+    <g fill="currentColor">
+      <g id="tk"><path d="M100,14 L96.6,25 L103.4,25 Z"/></g>
+      <use href="#tk" transform="rotate(18 100 100)"/><use href="#tk" transform="rotate(36 100 100)"/><use href="#tk" transform="rotate(54 100 100)"/><use href="#tk" transform="rotate(72 100 100)"/><use href="#tk" transform="rotate(90 100 100)"/><use href="#tk" transform="rotate(108 100 100)"/><use href="#tk" transform="rotate(126 100 100)"/><use href="#tk" transform="rotate(144 100 100)"/><use href="#tk" transform="rotate(162 100 100)"/><use href="#tk" transform="rotate(180 100 100)"/><use href="#tk" transform="rotate(198 100 100)"/><use href="#tk" transform="rotate(216 100 100)"/><use href="#tk" transform="rotate(234 100 100)"/><use href="#tk" transform="rotate(252 100 100)"/><use href="#tk" transform="rotate(270 100 100)"/><use href="#tk" transform="rotate(288 100 100)"/><use href="#tk" transform="rotate(306 100 100)"/><use href="#tk" transform="rotate(324 100 100)"/><use href="#tk" transform="rotate(342 100 100)"/>
+    </g>
+    <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width=".8" opacity=".7"/>
+  </symbol>
+  <symbol id="orn-zodiac2" viewBox="0 0 200 200">
+    <use href="#orn-ring2" width="200" height="200"/>
+    <use href="#orn-dog2" x="52" y="62" width="96" height="75"/>
+    <use href="#orn-blossom" x="88" y="34" width="24" height="24"/>
+    <use href="#orn-blossom" x="66" y="44" width="15" height="15" opacity=".8"/>
+    <use href="#orn-blossom" x="118" y="44" width="15" height="15" opacity=".8"/>
+    <path d="M96,148 l4,-5 l4,5 l-4,5 Z" fill="currentColor"/>
+  </symbol>
+
+  <!-- the temple plaque: red tablet, gold 狗 -->
+  <symbol id="orn-plaque" viewBox="0 0 130 250">
+    <path d="M18,16 L28,16 L28,6 L102,6 L102,16 L112,16 L112,28 L122,28 L122,222 L112,222 L112,234 L102,234 L102,244 L28,244 L28,234 L18,234 L18,222 L8,222 L8,28 L18,28 Z"
+      fill="var(--red)" stroke="var(--gold)" stroke-width="2"/>
+    <rect x="20" y="30" width="90" height="190" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".85"/>
+    <text x="65" y="158" text-anchor="middle" font-family="'Noto Serif SC',serif" font-weight="900" font-size="78" fill="var(--gold-bright)">狗</text>
+    <circle cx="65" cy="52" r="5" fill="none" stroke="var(--gold)" stroke-width="1.4"/>
+    <circle cx="65" cy="198" r="5" fill="none" stroke="var(--gold)" stroke-width="1.4"/>
+  </symbol>
+
+  <!-- plum blossom, paper-cut (from the zodiac references) -->
+  <symbol id="orn-blossom" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <circle cx="50" cy="22" r="17"/>
+      <circle cx="76.6" cy="41.3" r="17"/>
+      <circle cx="66.5" cy="72.7" r="17"/>
+      <circle cx="33.5" cy="72.7" r="17"/>
+      <circle cx="23.4" cy="41.3" r="17"/>
+    </g>
+    <circle cx="50" cy="50" r="10.5" fill="var(--paper, #F4EBD8)"/>
+    <circle cx="50" cy="50" r="4.5" fill="currentColor"/>
+  </symbol>
+
+  <!-- sunburst rays (the lunar-poster radiance) -->
+  <symbol id="orn-rays" viewBox="0 0 200 200">
+    <g fill="currentColor">
+      <path id="orn-ray" d="M100,100 L95.5,7 L104.5,7 Z"/>
+      <use href="#orn-ray" transform="rotate(22.5 100 100)"/>
+      <use href="#orn-ray" transform="rotate(45 100 100)"/>
+      <use href="#orn-ray" transform="rotate(67.5 100 100)"/>
+      <use href="#orn-ray" transform="rotate(90 100 100)"/>
+      <use href="#orn-ray" transform="rotate(112.5 100 100)"/>
+      <use href="#orn-ray" transform="rotate(135 100 100)"/>
+      <use href="#orn-ray" transform="rotate(157.5 100 100)"/>
+      <use href="#orn-ray" transform="rotate(180 100 100)"/>
+      <use href="#orn-ray" transform="rotate(202.5 100 100)"/>
+      <use href="#orn-ray" transform="rotate(225 100 100)"/>
+      <use href="#orn-ray" transform="rotate(247.5 100 100)"/>
+      <use href="#orn-ray" transform="rotate(270 100 100)"/>
+      <use href="#orn-ray" transform="rotate(292.5 100 100)"/>
+      <use href="#orn-ray" transform="rotate(315 100 100)"/>
+      <use href="#orn-ray" transform="rotate(337.5 100 100)"/>
+    </g>
+  </symbol>
+
+  <!-- the hanging temple plaque — red board, gold 狗, notched corners -->
+  <symbol id="orn-plaque" viewBox="0 0 120 260">
+    <path fill="var(--red-deep, #8C1F23)" stroke="var(--gold, #C0891A)" stroke-width="2.5"
+      d="M22,4 H98 Q102,4 102,8 V18 H112 Q116,18 116,22 V238 Q116,242 112,242 H102 V252 Q102,256 98,256 H22 Q18,256 18,252 V242 H8 Q4,242 4,238 V22 Q4,18 8,18 H18 V8 Q18,4 22,4 Z"/>
+    <rect x="15" y="30" width="90" height="200" fill="none" stroke="var(--gold, #C0891A)" stroke-width="1.2" opacity=".65"/>
+    <text x="60" y="156" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="76" font-weight="900" fill="var(--gold-bright, #E2B24A)">狗</text>
+    <circle cx="60" cy="216" r="4" fill="var(--gold, #C0891A)" opacity=".8"/>
+  </symbol>
+
+  <!-- corner cloud fan (top-left orientation) -->
+  <symbol id="orn-clouds" viewBox="0 0 140 140">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+      <path d="M0,22 A22,22 0 0 0 22,0"/>
+      <path d="M0,34 A34,34 0 0 0 34,0"/>
+      <path d="M0,46 A46,46 0 0 0 46,0"/>
+      <path d="M0,58 A58,58 0 0 0 58,0"/>
+      <path d="M0,70 A70,70 0 0 0 70,0"/>
+      <path d="M88,0 A12,12 0 0 0 112,0" stroke-width="2.4"/>
+      <path d="M79,0 A21,21 0 0 0 121,0" stroke-width="2.4"/>
+      <path d="M0,88 A12,12 0 0 1 0,112" stroke-width="2.4"/>
+      <path d="M0,79 A21,21 0 0 1 0,121" stroke-width="2.4"/>
+    </g>
+  </symbol>
+
+  <!-- ============ THE BULLION LAYER — 元宝 & minted bars ============ -->
+  <!-- 元宝 — the sycee ingot, paper-cut -->
+  <symbol id="orn-yuanbao" viewBox="0 0 120 68">
+    <path fill="currentColor" d="M60,4 Q78,4 83,24 Q84,30 78,31 Q60,34 42,31 Q36,30 37,24 Q42,4 60,4 Z"/>
+    <path fill="currentColor" d="M7,14 Q16,28 30,32 Q45,36 60,36 Q75,36 90,32 Q104,28 113,14 Q121,32 105,47 Q87,62 60,62 Q33,62 15,47 Q-1,32 7,14 Z"/>
+    <path fill="none" stroke="var(--paper,#F4EBD8)" stroke-width="2.2" d="M16,26 Q36,38 60,38 Q84,38 104,26" opacity=".85"/>
+  </symbol>
+  <!-- 元宝 stamped 金 -->
+  <symbol id="orn-yuanbao-jin" viewBox="0 0 120 68">
+    <use href="#orn-yuanbao" width="120" height="68"/>
+    <text x="60" y="55" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="17" font-weight="900" fill="var(--paper,#F4EBD8)">金</text>
+  </symbol>
+  <!-- the minted bar — 金狗 · 999.9 -->
+  <symbol id="orn-goldbar" viewBox="0 0 150 58">
+    <path fill="currentColor" d="M22,5 H128 L145,53 H5 Z"/>
+    <path fill="none" stroke="var(--paper,#F4EBD8)" stroke-width="1.1" opacity=".7" d="M28,11 H122 L135,47 H15 Z"/>
+    <text x="75" y="29" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="15" font-weight="900" fill="var(--paper,#F4EBD8)">金狗</text>
+    <text x="75" y="42" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7" letter-spacing="2" fill="var(--paper,#F4EBD8)" opacity=".85" textLength="86" lengthAdjust="spacingAndGlyphs">FINE GOLD 999.9</text>
+  </symbol>
+  <!-- the stack — two below, one above, on a hairline ground -->
+  <symbol id="orn-barstack" viewBox="0 0 300 124">
+    <use href="#orn-goldbar" x="8" y="66" width="140" height="54"/>
+    <use href="#orn-goldbar" x="152" y="66" width="140" height="54"/>
+    <use href="#orn-goldbar" x="80" y="10" width="140" height="54"/>
+    <path d="M0,122 H300" stroke="currentColor" stroke-width="1" opacity=".5"/>
+  </symbol>
+  <!-- Flap butterfly — flap.sh brand mark, single-colour cut -->
+  <symbol id="orn-flap" viewBox="0 0 32 32">
+    <g transform="translate(2.4 4)" fill="currentColor">
+      <path d="M21.8783 14.8573C23.658 15.7705 25.0822 17.1233 25.9778 18.8624C26.7242 20.312 27.0938 22.6116 25.5336 23.5043C24.9422 23.8425 24.2208 23.8684 23.5375 23.7525C20.3004 23.2039 17.7815 20.5911 16.5745 17.6442C15.0544 13.9323 15.4026 9.92631 17.2301 6.40079C18.5266 3.90028 20.5822 1.88433 23.1443 0.724309C24.8663 -0.0552525 27.5252 -0.157527 28.353 1.67887C28.7812 2.62844 28.7658 3.69664 28.4139 4.69166C27.5193 7.21899 25.6609 9.22221 23.2716 10.4331C21.9746 11.0904 20.6613 11.5068 19.2439 11.8204C18.6547 11.9509 17.6578 12.1186 17.6278 12.7636C17.5978 13.4068 18.4338 13.6118 18.9684 13.7668C19.9712 14.0578 20.9095 14.3605 21.8783 14.8573Z"/>
+      <path d="M3.07499 23.463C1.45119 22.4403 2.03307 19.9657 2.9168 18.4597C3.98599 16.6388 5.63071 15.3019 7.5859 14.4897C8.54827 14.0901 9.487 13.8442 10.4685 13.5142C10.7449 13.4215 11.0072 13.1269 11.0372 12.9133C11.1526 12.0878 9.93659 11.9369 9.19879 11.7669C7.81274 11.4473 6.52398 11.0191 5.2634 10.36C2.93225 9.14137 1.11662 7.14769 0.250166 4.65355C-0.0944135 3.6608 -0.0980508 2.5926 0.333356 1.65531C0.70112 0.856203 1.49711 0.402103 2.35583 0.254828C3.47322 0.0630055 4.57742 0.278919 5.63161 0.769384C8.31324 2.01714 10.4075 4.18491 11.674 6.85951C13.3356 10.3687 13.5601 14.2565 12.0173 17.8438C10.793 20.6898 8.31325 23.2021 5.17475 23.7462C4.45104 23.8717 3.69006 23.8503 3.07545 23.4635L3.07499 23.463Z"/>
+    </g>
+  </symbol>
+</svg>
+
+<div class="frame">
+
+  <!-- ================= MASTHEAD ================= -->
+  <header>
+    <div class="masthead">
+      <div class="brand">
+        <img src="golden_dog_plate.jpg" alt="金狗 — The Golden Dog">
+        <span class="zh">金狗</span>
+        <span class="smallcaps">The Golden Dog · BNB Chain</span>
+      </div>
+      <nav class="smallcaps">
+        <a href="#lore">Lore</a>
+        <a href="#mechanics">Mechanics</a>
+        <a href="#gold">The Gold</a>
+        <a href="#vault">The Pool</a>
+        <a href="#alltime">The Record</a>
+        <a href="#chart">Chart</a>
+        <a href="https://x.com/i/communities/2019254401861362177" target="_blank" rel="noopener" class="community">X Community <span class="mono">→</span></a>
+      </nav>
+      <a href="./" class="zh lang smallcaps" style="font-size:13px;font-weight:600;color:var(--red);border:1px solid var(--red);padding:3px 10px;">中文版</a>
+      <a class="smallcaps" href="https://flap.sh" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:inherit;text-decoration:none;">Launched on Flap <svg style="width:14px;height:14px;color:var(--gold);flex:none;vertical-align:-2px;" viewBox="0 0 32 32"><use href="#orn-flap"/></svg></a>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <div class="hero">
+    <span class="cloud-fan tl"><svg><use href="#orn-clouds"/></svg></span>
+    <span class="hero-watermark"><svg><use href="#orn-zodiac"/></svg></span>
+    <div class="issue">
+      <span class="smallcaps">Nº 001 — The Literal Edition</span>
+      <span class="smallcaps">Paired with XAUt · Tether Gold</span>
+    </div>
+
+    <span class="couplet cl" aria-hidden="true">打狗人空手而归</span>
+    <span class="couplet cr" aria-hidden="true">持狗者坐等分金</span>
+
+    <div class="hero-art">
+      <span class="hero-plaque" aria-hidden="true"><svg viewBox="0 0 120 260"><use href="#orn-plaque"/></svg></span>
+      <span class="blossom b1" aria-hidden="true"><svg><use href="#orn-blossom"/></svg></span>
+      <span class="blossom b2" aria-hidden="true"><svg><use href="#orn-blossom"/></svg></span>
+      <span class="blossom b3" aria-hidden="true"><svg><use href="#orn-blossom"/></svg></span>
+      <div class="hero-plate">
+        <div class="seal zh">金<br>狗</div>
+        <img src="golden_dog_plate.jpg" alt="The Golden Dog — official plate">
+        <p class="plate-cap">Plate 01 — The Golden Dog · struck in digital gold</p>
+      </div>
+      <span class="altar-ingots" aria-hidden="true">
+        <svg class="i1"><use href="#orn-yuanbao-jin"/></svg>
+        <svg class="i2"><use href="#orn-yuanbao"/></svg>
+      </span>
+    </div>
+
+    <h1 class="zh"><span class="gold-char">金</span><span class="red-char">狗</span></h1>
+    <div class="translit">
+      <span class="tick"></span>
+      <span class="smallcaps">jīn gǒu · “golden dog.” every cycle crowns one. this one settles in bullion.</span>
+    </div>
+
+    <div class="hero-sub">
+      <p class="hook-kicker smallcaps">真金不怕火炼 · Real gold fears no fire.</p>
+      <h2>Every trade pays rewards.<br>The rewards land as gold, in every holder's wallet.<br><em>Nothing else needs to be believed.</em></h2>
+      <p class="standfirst">金狗 does one thing and does not explain itself. Each trade sets rewards aside.
+      The contract converts the rewards to XAUt, Tether Gold, one troy ounce per token, allocated
+      physical metal in Switzerland, and sends it to every wallet that holds. No staking. No claiming.
+      No noise. Charts move. Narratives rotate. Gold settles. <strong>Hold the dog. Collect the
+      metal.</strong></p>
+    </div>
+
+    <div class="ca-bar">
+      <span class="lab">CONTRACT — BSC</span>
+      <span class="addr" id="ca">0xB5e29D5aBefc2EDE88D17d161D5B840174497777</span>
+      <button onclick="copyCA(this)">Copy CA</button>
+    </div>
+  </div>
+
+  <!-- ================= I. LORE ================= -->
+  <section id="lore">
+    <div class="sec-head">
+      <span class="no">— I</span>
+      <h3>The Lore</h3>
+      <span class="sec-medal"><svg><use href="#orn-zodiac"/></svg></span>
+      <span class="zh-tag">传说</span>
+    </div>
+
+    <div class="lore-grid">
+      <div class="lede">
+        <p><strong>“金狗” is the most-used word in Chinese crypto.</strong> It is not a project.
+        It is not a ticker. It is the prize itself — the name traders give the one token a day
+        that actually runs. Thousands of hunters wake up, open the terminal, and go
+        <span class="zh">打狗</span> — “dog hunting” — sifting through hundreds of launches
+        looking for the one golden dog in a street full of mutts.</p>
+        <p>For years the golden dog was a ghost. Everyone chased it. Nobody could hold it,
+        because the moment a dog turned golden, the gold was already gone.</p>
+        <p>Then the founder’s desk at Flap <a href="https://x.com/eth_cedric/status/2076954209577046038" target="_blank" rel="noopener">posted one sentence</a>, and the community answered the
+        only way the street knows how: <strong>they made the metaphor literal.</strong> They launched the
+        golden dog itself — and bolted a pool of real gold underneath it.</p>
+
+        <p>Ask anyone who hunts: finding the golden dog was never the hard part.
+        <strong>Holding it is.</strong> The street knows three shapes. The speedrun dog that tops
+        in an afternoon and never looks back. The slow climber that grinds higher every day,
+        each dip holding above the last leg, while nobody believes it. The shakeout dog that
+        spends a week in wide, violent chop, throwing every passenger off the bus before the
+        real move. Three shapes, one law: the golden dog pays only the ones who can
+        <span class="zh">拿住</span>. Most cannot. The shakeout exists to make sure of it.</p>
+
+        <p>This dog rewrites that arithmetic. Every hour you sit, gold lands in your wallet.
+        The chop clears someone else’s chips, not yours. Selling no longer just closes a
+        position. <strong>It cuts off your own gold stream.</strong> Conviction stops being a
+        feeling and becomes a balance.</p>
+
+        <div class="defn">
+          <div class="term"><span class="zh">打狗</span><span class="pinyin">dǎ gǒu</span></div>
+          <p class="body">v. — to hunt new token launches. What every on-chain hunter does all day, every day.</p>
+        </div>
+        <div class="defn">
+          <div class="term"><span class="zh">金狗</span><span class="pinyin">jīn gǒu</span></div>
+          <p class="body">n. — the golden dog. The launch that pumps hardest today. The reason the hunt exists.</p>
+        </div>
+        <div class="defn">
+          <div class="term"><span class="zh">拿住</span><span class="pinyin">ná zhù</span></div>
+          <p class="body">v. — to hold on through the violence. The rarest skill on-chain. The whole game, in two characters.</p>
+        </div>
+        <div class="defn">
+          <div class="term"><span class="zh">洗盘</span><span class="pinyin">xǐ pán</span></div>
+          <p class="body">n. — the shakeout. Engineered chop that clears weak hands before the run. This dog pays you gold to sit through it.</p>
+        </div>
+        <div class="defn">
+          <div class="term"><span class="zh">黄金底池</span><span class="pinyin">huángjīn dǐchí</span></div>
+          <p class="body">n. — “the gold-bottomed pool.” This token’s liquidity is paired with XAUt: tokenized, allocated, physical gold.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="smallcaps" style="margin-bottom:18px">The Genesis Post — 14 Jul 2026</p>
+        <a class="pull-link" href="https://x.com/eth_cedric/status/2076954209577046038" target="_blank" rel="noopener">
+        <div class="pull">
+          <p class="zh">“我现在的工作很简单：<br>让 Flap 上的下一个 80M 金狗尽快发生。”</p>
+          <p class="en">“My job right now is simple: make the next 80M golden dog on Flap happen, as fast as possible.”</p>
+          <p class="att smallcaps">— Cedric 🦋, Flap · @eth_cedric <span class="mono">→</span></p>
+        </div>
+        </a>
+
+        <div class="timeline">
+          <p class="smallcaps" style="margin-bottom:6px">How the dog was born</p>
+          <div class="row"><span class="d">JUN 2026</span><p>CZ sets the drum: <a href="https://x.com/cz_binance/status/2067344333582557267" target="_blank" rel="noopener">“countries need to tokenize their stocks.”</a> Binance ships <a href="https://x.com/cz_binance/status/2065401311818846291" target="_blank" rel="noopener">bStocks</a> — <a href="https://x.com/cz_binance/status/2070176909162410430" target="_blank" rel="noopener">$100M AUM in two weeks</a>, <a href="https://x.com/BinanceWallet/status/2082384070789730559" target="_blank" rel="noopener">$500M in seven</a>.</p></div>
+          <div class="row"><span class="d">14 JUL</span><p>Cedric <a href="https://x.com/eth_cedric/status/2076954209577046038" target="_blank" rel="noopener">posts the challenge</a>: <b>the next 80M golden dog.</b> 233K views. The community reads it as a starting gun.</p></div>
+          <div class="row"><span class="d">JUL 2026</span><p>Flap <a href="https://x.com/flapdotsh/status/2082105893697782105" target="_blank" rel="noopener">ships RWA trading pairs</a> on BNB Chain — memecoins paired against tokenized SpaceX, Tesla, Apple… <b>and gold.</b> Meme × RWA season opens.</p></div>
+          <div class="row"><span class="d">27 JUL</span><p><b>金狗 deploys.</b> Not named after the golden dog. It IS the golden dog — paired with a gold pool, rewards paid out in gold.</p></div>
+          <div class="row"><span class="d">30 JUL</span><p>The lane gets its Binance stamp. <a href="https://coincu.com/binance-alpha-lists-marscoin/" target="_blank" rel="noopener">MarsCoin</a> — a Flap dog paired with the tokenized SpaceX share — <b>lands on Binance Alpha</b> days after 金狗 deploys.</p></div>
+          <div class="row"><span class="d">AUG 2026</span><p>Binance Wallet opens a <a href="https://x.com/cfm_sol/status/2082788573124964357" target="_blank" rel="noopener">“Stock Meme Coins” feed</a> — RWA-paired dogs now have their own tab in the world’s biggest wallet. <b>The rail runs from Flap straight to Binance.</b></p></div>
+          <div class="row"><span class="d">4 AUG</span><p>Binance goes full gold. <a href="https://x.com/binance/status/2084520189714928023" target="_blank" rel="noopener">Gold &amp; Silver options go live on Binance itself</a> — no new app, no new wallet. <b>The world’s biggest exchange now trades the metal the dog pays out in.</b></p></div>
+          <div class="row"><span class="d">NOW</span><p>The hunt inverts. You don’t chase the golden dog anymore. <b>You hold it, and the gold comes to you.</b></p></div>
+        </div>
+
+        <div class="hero-plate lore-plate" style="margin-top:34px;transform:rotate(-1.2deg);">
+          <div class="seal zh">狗</div>
+          <img src="golden_dog_plate.jpg" alt="金狗 before the tablet" loading="lazy">
+          <p class="plate-cap">Plate 02 — the dog before the tablet · 立于碑前</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= II. MECHANICS ================= -->
+  <section id="mechanics">
+    <div class="sec-head">
+      <span class="no">— II</span>
+      <h3>The Mechanics</h3>
+      <span class="sec-medal"><svg><use href="#orn-face-med"/></svg></span>
+      <span class="zh-tag">机制</span>
+    </div>
+
+    <div class="mech-grid">
+      <div>
+        <div class="mech-diagram">
+          <!-- fine-line flow diagram -->
+          <svg class="d-desk" viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono',monospace">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10" fill="none" stroke="#2E0C0D" stroke-width="1.2"/>
+              </marker>
+              <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10" fill="none" stroke="#C0891A" stroke-width="1.2"/>
+              </marker>
+            </defs>
+
+            <!-- TRADE -->
+            <rect x="36" y="36" width="184" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="128" y="66" text-anchor="middle" font-size="12" fill="#2E0C0D" textLength="110" lengthAdjust="spacing">EVERY TRADE</text>
+            <text x="128" y="88" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="150" lengthAdjust="spacingAndGlyphs">buys · sells · PancakeSwap</text>
+
+            <!-- REWARDS -->
+            <rect x="420" y="36" width="184" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="512" y="66" text-anchor="middle" font-size="12" fill="#2E0C0D" textLength="142" lengthAdjust="spacing">REWARDS SKIMMED</text>
+            <text x="512" y="88" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="152" lengthAdjust="spacingAndGlyphs">flap V3 contract · on-chain</text>
+
+            <path d="M220,71 H420" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
+            <text x="320" y="61" text-anchor="middle" font-size="9" fill="rgba(46,12,13,.55)" textLength="118" lengthAdjust="spacingAndGlyphs">automatic, per swap</text>
+
+            <!-- LIQUIDATE -->
+            <path d="M512,106 V178" stroke="#2E0C0D" stroke-width="1.2" marker-end="url(#arr)" fill="none"/>
+            <rect x="374" y="178" width="230" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="489" y="208" text-anchor="middle" font-size="12" fill="#2E0C0D" textLength="168" lengthAdjust="spacing">LIQUIDATED → GOLD</text>
+            <text x="489" y="230" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="182" lengthAdjust="spacingAndGlyphs">rewards swapped into XAUt · Tether Gold</text>
+
+            <!-- GOLD POOL -->
+            <circle cx="150" cy="213" r="54" fill="none" stroke="#C0891A" stroke-width="1.6"/>
+            <circle cx="150" cy="213" r="43" fill="none" stroke="#C0891A" stroke-width=".7" opacity=".6"/>
+            <text x="150" y="206" text-anchor="middle" font-size="14" fill="#C0891A" textLength="60" lengthAdjust="spacing" font-family="'Noto Serif SC',serif" font-weight="900">黄金底池</text>
+            <text x="150" y="226" text-anchor="middle" font-size="9" fill="#C0891A" textLength="76" lengthAdjust="spacingAndGlyphs">金狗 / XAUt POOL</text>
+            <path d="M374,213 H208" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
+
+            <!-- AIRDROP -->
+            <path d="M489,248 V318" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
+            <rect x="322" y="318" width="282" height="80" fill="#C0891A" stroke="#C0891A"/>
+            <text x="463" y="352" text-anchor="middle" font-size="13" fill="#F4EBD8" textLength="160" lengthAdjust="spacing">XAUt AIRDROPPED</text>
+            <text x="463" y="376" text-anchor="middle" font-size="10" fill="rgba(244,235,216,.85)" textLength="210" lengthAdjust="spacingAndGlyphs">straight to every holder’s wallet</text>
+
+            <!-- HOLDER -->
+            <rect x="44" y="322" width="200" height="70" fill="none" stroke="#2E0C0D" stroke-width="1.3"/>
+            <text x="144" y="352" text-anchor="middle" font-size="12" fill="#2E0C0D" textLength="118" lengthAdjust="spacing">YOU, HOLDING</text>
+            <text x="144" y="374" text-anchor="middle" font-size="9.5" fill="rgba(46,12,13,.55)" textLength="168" lengthAdjust="spacingAndGlyphs">no claim · no staking · no button</text>
+            <path d="M322,358 H244" stroke="#C0891A" stroke-width="1.2" marker-end="url(#arrg)" fill="none"/>
+
+            <!-- annotations -->
+            <text x="40" y="140" font-size="9" letter-spacing="1.5" fill="rgba(46,12,13,.45)">FIG. 01 — THE CIRCUIT OF THE GOLDEN DOG</text>
+            <text x="40" y="440" font-size="9" letter-spacing="1.5" fill="rgba(46,12,13,.45)">INK = TOKEN FLOW · GOLD = GOLD FLOW · NO HUMAN IN THE LOOP</text>
+          </svg>
+          <svg class="d-mob" viewBox="0 0 400 790" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono',monospace">
+            <defs>
+              <marker id="arr-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10" fill="none" stroke="#2E0C0D" stroke-width="1.2"/>
+              </marker>
+              <marker id="arrg-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10" fill="none" stroke="#C0891A" stroke-width="1.2"/>
+              </marker>
+            </defs>
+            <text x="30" y="28" font-size="10" letter-spacing="1.5" fill="rgba(46,12,13,.45)">FIG. 01 — THE CIRCUIT</text>
+
+            <rect x="66" y="46" width="268" height="78" fill="none" stroke="#2E0C0D" stroke-width="1.4"/>
+            <text x="200" y="80" text-anchor="middle" font-size="16" fill="#2E0C0D" textLength="150" lengthAdjust="spacing">EVERY TRADE</text>
+            <text x="200" y="104" text-anchor="middle" font-size="11" fill="rgba(46,12,13,.55)" textLength="196" lengthAdjust="spacingAndGlyphs">buys · sells · PancakeSwap</text>
+
+            <path d="M200,124 V172" stroke="#2E0C0D" stroke-width="1.3" marker-end="url(#arr-m)" fill="none"/>
+            <text x="214" y="152" font-size="10" fill="rgba(46,12,13,.55)" textLength="126" lengthAdjust="spacingAndGlyphs">automatic, per swap</text>
+
+            <rect x="66" y="174" width="268" height="78" fill="none" stroke="#2E0C0D" stroke-width="1.4"/>
+            <text x="200" y="208" text-anchor="middle" font-size="16" fill="#2E0C0D" textLength="196" lengthAdjust="spacing">REWARDS SKIMMED</text>
+            <text x="200" y="232" text-anchor="middle" font-size="11" fill="rgba(46,12,13,.55)" textLength="200" lengthAdjust="spacingAndGlyphs">flap V3 contract · on-chain</text>
+
+            <path d="M200,252 V300" stroke="#2E0C0D" stroke-width="1.3" marker-end="url(#arr-m)" fill="none"/>
+            <text x="214" y="280" font-size="10" fill="rgba(46,12,13,.55)" textLength="120" lengthAdjust="spacingAndGlyphs">liquidated → gold</text>
+
+            <circle cx="200" cy="368" r="66" fill="none" stroke="#C0891A" stroke-width="1.8"/>
+            <circle cx="200" cy="368" r="53" fill="none" stroke="#C0891A" stroke-width=".8" opacity=".6"/>
+            <text x="200" y="362" text-anchor="middle" font-size="18" fill="#C0891A" textLength="76" lengthAdjust="spacing" font-family="'Noto Serif SC',serif" font-weight="900">黄金底池</text>
+            <text x="200" y="384" text-anchor="middle" font-size="10" fill="#C0891A" textLength="88" lengthAdjust="spacingAndGlyphs">金狗 / XAUt POOL</text>
+
+            <path d="M200,436 V484" stroke="#C0891A" stroke-width="1.3" marker-end="url(#arrg-m)" fill="none"/>
+            <text x="214" y="464" font-size="10" fill="#C0891A" textLength="168" lengthAdjust="spacingAndGlyphs">rewards swapped into XAUt</text>
+
+            <rect x="56" y="486" width="288" height="88" fill="#C0891A" stroke="#C0891A"/>
+            <text x="200" y="524" text-anchor="middle" font-size="16" fill="#F4EBD8" textLength="185" lengthAdjust="spacing">XAUt AIRDROPPED</text>
+            <text x="200" y="550" text-anchor="middle" font-size="11" fill="rgba(244,235,216,.85)" textLength="216" lengthAdjust="spacingAndGlyphs">straight to every holder’s wallet</text>
+
+            <path d="M200,574 V622" stroke="#C0891A" stroke-width="1.3" marker-end="url(#arrg-m)" fill="none"/>
+            <text x="214" y="602" font-size="10" fill="#C0891A" textLength="132" lengthAdjust="spacingAndGlyphs">no claim · no staking</text>
+
+            <rect x="66" y="624" width="268" height="78" fill="none" stroke="#2E0C0D" stroke-width="1.4"/>
+            <text x="200" y="658" text-anchor="middle" font-size="16" fill="#2E0C0D" textLength="158" lengthAdjust="spacing">YOU, HOLDING</text>
+            <text x="200" y="682" text-anchor="middle" font-size="11" fill="rgba(46,12,13,.55)" textLength="176" lengthAdjust="spacingAndGlyphs">hold, and gold appears</text>
+
+            <text x="30" y="742" font-size="9.5" letter-spacing="1" fill="rgba(46,12,13,.45)" textLength="252" lengthAdjust="spacingAndGlyphs">INK = TOKEN FLOW · GOLD = GOLD FLOW</text>
+            <text x="30" y="760" font-size="9.5" letter-spacing="1" fill="rgba(46,12,13,.45)">NO HUMAN IN THE LOOP</text>
+          </svg>
+        </div>
+        <p class="fig-cap">Fig. 01 — Volume in, <b>gold out.</b> The reward engine converts trading
+        activity into XAUt and distributes it pro-rata to holders. The dog barks; gold answers.</p>
+      </div>
+
+      <div>
+        <div class="index">
+          <div class="item">
+            <span class="n">01</span>
+            <div><h4>You buy the dog <span class="zh">买狗</span></h4>
+            <p>Standard swap on PancakeSwap. The pool on the other side isn’t just WBNB — the dog trades against a gold-bottomed pool.</p></div>
+          </div>
+          <div class="item">
+            <span class="n">02</span>
+            <div><h4>Every trade pays rewards <span class="zh">分红</span></h4>
+            <p>A Flap V3 contract skims rewards from each buy and sell on-chain. No treasury multisig, no “team wallet,” no promises. Code, not vibes.</p></div>
+          </div>
+          <div class="item">
+            <span class="n">03</span>
+            <div><h4>Rewards become gold <span class="zh">变金</span></h4>
+            <p>Collected rewards are liquidated into XAUt — Tether Gold. One token, one fine troy ounce of physical gold held in Switzerland.</p></div>
+          </div>
+          <div class="item">
+            <span class="n">04</span>
+            <div><h4>Gold rains on holders <span class="zh">分金</span></h4>
+            <p>XAUt is airdropped automatically, pro-rata, to every wallet holding 金狗. You don’t claim. You don’t stake. You hold, and gold appears.</p></div>
+          </div>
+        </div>
+
+        <p class="mech-line">Other dogs pay you in their own supply.<br>
+        This one pays you in <em>the oldest money on earth.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= III. THE GOLD ================= -->
+  <section id="gold">
+    <div class="sec-head">
+      <span class="no">— III</span>
+      <h3>The Gold Is Real</h3>
+      <span class="sec-medal"><svg><use href="#orn-photo-med"/></svg></span>
+      <span class="zh-tag">真金</span>
+    </div>
+
+    <div class="gold-grid">
+      <div class="bar-chart">
+        <p class="smallcaps" style="margin-bottom:8px">What backs the reward · a comparison</p>
+        <div class="row">
+          <span class="lab">Points</span>
+          <div class="bar"><i style="width:3%;background:var(--ink-faint)"></i></div>
+        </div>
+        <div class="row">
+          <span class="lab">“Utility soon”</span>
+          <div class="bar"><i style="width:2%;background:var(--ink-faint)"></i></div>
+        </div>
+        <div class="row">
+          <span class="lab">Reflections, same token</span>
+          <div class="bar"><i style="width:9%;background:var(--ink-soft)"></i></div>
+        </div>
+        <div class="row">
+          <span class="lab">XAUt · allocated gold</span>
+          <div class="bar"><i style="width:100%;background:var(--gold)"></i></div>
+        </div>
+        <div class="row" style="border-bottom:1px solid var(--line)">
+          <span class="lab">5,000 yrs of track record</span>
+          <div class="bar"><i style="width:100%;background:var(--gold);opacity:.45"></i></div>
+        </div>
+        <p class="fig-cap" style="margin-top:16px">Fig. 02 — Bar lengths are editorial opinion.<br>The gold, however, is not.</p>
+      </div>
+
+      <div class="gold-copy">
+        <p class="kicker">Not points. Not a promise.<br><em>Allocated, audited, tokenized gold.</em></p>
+        <p>XAUt is Tether Gold — each token represents ownership of one fine troy ounce of
+        physical gold on a numbered bar in Switzerland. It trades on-chain like any
+        other token, which means the airdrop hitting your wallet is not a screenshot of value.
+        It <strong>is</strong> value.</p>
+        <p>This is the joke, and the joke is serious: the casino’s most reckless
+        instrument — the reward-farming dog token — welded directly to the single most conservative
+        asset in human history. Grandpa’s bullion, the dog’s heartbeat.</p>
+        <p class="fine">Meme × RWA is the season on BNB Chain: dogs paired with tokenized
+        SpaceX, Tesla, Nvidia. The golden dog picked the only pairing with 5,000 years of
+        uptime.</p>
+      </div>
+    </div>
+
+    <div class="bullion" aria-hidden="true">
+      <svg><use href="#orn-barstack"/></svg>
+    </div>
+    <p class="fig-cap bullion-cap">Fig. 03 — The reserves, as the editorial team imagines them.<br>The pool below counts the real ounces.</p>
+  </section>
+
+  <!-- ================= STAT BAND ================= -->
+  <div class="stats">
+    <span class="cloud-fan tl"><svg><use href="#orn-clouds"/></svg></span>
+    <span class="cloud-fan tr"><svg><use href="#orn-clouds"/></svg></span>
+    <span class="cloud-fan bl"><svg><use href="#orn-clouds"/></svg></span>
+    <span class="cloud-fan br"><svg><use href="#orn-clouds"/></svg></span>
+    <div class="medal-divider">
+      <span class="yb-side" aria-hidden="true"><svg><use href="#orn-yuanbao-jin"/></svg></span>
+      <span class="medal-wrap">
+        <span class="medal-rays" aria-hidden="true"><svg><use href="#orn-rays"/></svg></span>
+        <span class="medal"><svg><use href="#orn-photo-med"/></svg></span>
+      </span>
+      <span class="yb-side" aria-hidden="true"><svg><use href="#orn-yuanbao-jin"/></svg></span>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="v">1.0<span style="font-size:.5em">B</span></div><div class="l smallcaps">Total supply · fixed</div></div>
+      <div class="stat"><div class="v goldnum">XAUt</div><div class="l smallcaps">Reward asset · 1 oz gold</div></div>
+      <div class="stat"><div class="v">BSC</div><div class="l smallcaps">Chain · PancakeSwap</div></div>
+      <div class="stat"><div class="v goldnum">100%</div><div class="l smallcaps">Of rewards → holders, as gold</div></div>
+    </div>
+    <p class="note">Price, market cap and volume move by the minute — see the live chart below for numbers that are true right now.</p>
+  </div>
+
+  <!-- ================= IV. THE VAULT, LIVE ================= -->
+  <section id="vault">
+    <div class="sec-head">
+      <span class="no">— IV</span>
+      <h3>The Pool, Live</h3>
+      <span class="live-pill smallcaps"><i></i>Live from BNB Chain</span>
+      <span class="sec-medal"><svg><use href="#orn-face-med"/></svg></span>
+      <span class="zh-tag">底池实况</span>
+    </div>
+
+    <div class="vault-grid">
+      <div class="vault-stats">
+        <div class="vtile">
+          <p class="smallcaps">Gold in the pool · right now</p>
+          <div class="vnum goldnum"><span id="v-oz">…</span><i> oz</i></div>
+          <p class="vsub" id="v-oz-usd">reading the pool…</p>
+        </div>
+        <div class="vtile">
+          <p class="smallcaps">One ounce of XAUt</p>
+          <div class="vnum"><span id="v-px">…</span></div>
+          <p class="vsub">Tether Gold · allocated in Switzerland</p>
+        </div>
+        <div class="vtile">
+          <p class="smallcaps">Gold moved · last hour</p>
+          <div class="vnum goldnum"><span id="v-flow">…</span><i> oz</i></div>
+          <p class="vsub" id="v-flow-sub">listening…</p>
+        </div>
+        <div class="vault-ingots" aria-hidden="true">
+          <svg style="width:32px;height:19px"><use href="#orn-yuanbao"/></svg>
+          <svg style="width:46px;height:27px"><use href="#orn-yuanbao-jin"/></svg>
+          <svg style="width:26px;height:15px"><use href="#orn-yuanbao"/></svg>
+        </div>
+      </div>
+
+      <div class="vault-ledger">
+        <div class="ledger-head">
+          <span class="smallcaps">Fig. 04 — The Gold Ledger</span>
+          <span class="lscan mono" id="v-scan">dialing the chain…</span>
+        </div>
+        <ul id="ledger" class="ledger"></ul>
+        <p class="ledger-empty smallcaps">The pool is quiet. The moment gold moves, it prints here.</p>
+      </div>
+    </div>
+
+    <p class="fig-cap" style="margin-top:22px">Every ounce above settled on BNB Chain before this page
+    heard about it. Check any row against <b>BscScan</b>. The dog keeps no books.
+    The chain keeps them for him. 链上为证.</p>
+  </section>
+
+  <!-- ================= PAYOUT RECORD ================= -->
+  <section id="alltime">
+    <div class="sec-head">
+      <span class="no">— V</span>
+      <h3>The Payout Record</h3>
+      <span class="live-pill smallcaps"><i></i>All time · since genesis</span>
+      <span class="sec-medal"><svg><use href="#orn-photo-med"/></svg></span>
+      <span class="zh-tag">分金总账</span>
+    </div>
+
+    <div class="payout-hero">
+      <p class="smallcaps">Gold the vault has paid out to holders · all time</p>
+      <div class="paynum"><span id="at-oz">0.00</span><i> oz</i></div>
+      <p class="pay-usd" id="at-usd">counting the ounces…</p>
+      <div class="ingot-wall" id="ingot-wall" aria-hidden="true"></div>
+      <p class="ingot-cap smallcaps" id="ingot-cap">weighing the ingots…</p>
+    </div>
+
+    <div class="pay-tiles">
+      <div class="pay-tile">
+        <p class="smallcaps">Payouts settled</p>
+        <div class="pv goldnum"><span id="at-n">…</span></div>
+        <p class="psub">every one on BscScan</p>
+      </div>
+      <div class="pay-tile">
+        <p class="smallcaps">Wallets paid</p>
+        <div class="pv goldnum"><span id="at-w">…</span></div>
+        <p class="psub">distinct addresses holding gold</p>
+      </div>
+      <div class="pay-tile">
+        <p class="smallcaps">Richest single payout</p>
+        <div class="pv goldnum"><span id="at-big">…</span><i> oz</i></div>
+        <p class="psub"><a id="at-big-tx" href="#" target="_blank" rel="noopener">the receipt ↗</a></p>
+      </div>
+      <div class="pay-tile">
+        <p class="smallcaps">Gold swallowed · all time</p>
+        <div class="pv goldnum"><span id="at-in">…</span><i> oz</i></div>
+        <p class="psub">the dog takes in more than he pays</p>
+      </div>
+    </div>
+
+    <p class="fig-cap" style="margin-top:26px">Fig. 05 — Every ounce above left the vault and landed in a
+    holder's wallet, settled on BNB Chain. The dog does not promise gold. He has already paid it.
+    Totals reconciled against the chain on the hour; the live ledger keeps counting between audits. 已付，链上为证.</p>
+  </section>
+
+  <!-- ================= CHART ================= -->
+  <section id="chart" style="border-bottom:1px solid var(--line)">
+    <div class="sec-head">
+      <span class="no">— VI</span>
+      <h3>The Chart</h3>
+      <span class="sec-medal"><svg><use href="#orn-zodiac"/></svg></span>
+      <span class="zh-tag">走势</span>
+    </div>
+    <div class="chart-wrap">
+      <iframe src="https://dexscreener.com/bsc/0x1CE038394B2E11ebd6D7Cc44E7F98c9D195832f0?embed=1&amp;theme=light&amp;chartTheme=light&amp;trades=0&amp;info=0&amp;tabs=0&amp;chartLeftToolbar=0&amp;loadChartSettings=0&amp;chartType=usd&amp;interval=15" title="金狗 live chart"></iframe>
+    </div>
+    <p class="fig-cap" style="margin-top:16px">Fig. 06 — Live via DexScreener. The editorial team does not predict the future; it only distributes gold.</p>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <p class="zh zh-big"><span>金</span>狗</p>
+        <p class="smallcaps" style="margin-top:18px">Hold the dog.<br>Earn real gold.</p>
+        <span class="foot-medal"><svg><use href="#orn-photo-med"/></svg></span>
+      </div>
+      <div>
+        <p class="smallcaps" style="margin-bottom:10px">Enter the kennel</p>
+        <ul class="foot-links">
+          <li><a href="https://x.com/GoldenDogBSC" target="_blank" rel="noopener">Official X <span class="mono">@GoldenDogBSC</span></a></li>
+          <li><a href="https://x.com/i/communities/2019254401861362177" target="_blank" rel="noopener">X Community <span class="mono">→</span></a></li>
+          <li><a href="https://x.com/flapdotsh" target="_blank" rel="noopener">Flap 🦋 <span class="mono">@flapdotsh</span></a></li>
+          <li><a href="https://flap.sh" target="_blank" rel="noopener">Launchpad <span class="mono">flap.sh</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="smallcaps" style="margin-bottom:10px">Verify everything</p>
+        <ul class="foot-links">
+          <li><a href="https://dexscreener.com/bsc/0x1ce038394b2e11ebd6d7cc44e7f98c9d195832f0" target="_blank" rel="noopener">DexScreener <span class="mono">live pair</span></a></li>
+          <li><a href="https://bscscan.com/token/0xB5e29D5aBefc2EDE88D17d161D5B840174497777" target="_blank" rel="noopener">BscScan <span class="mono">contract</span></a></li>
+          <li><a href="#" onclick="copyCA(this);return false;">Copy contract <span class="mono">0xB5e2…7777</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="https://flap.sh" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:13px;margin:38px auto 0;max-width:600px;border:1px solid rgba(46,12,13,.28);padding:15px 22px;text-decoration:none;color:inherit;">
+      <svg style="width:27px;height:27px;color:var(--gold);flex:none;vertical-align:-2px;" viewBox="0 0 32 32"><use href="#orn-flap"/></svg>
+      <span class="smallcaps" style="font-size:11px;letter-spacing:.13em;line-height:1.7;">Hatched on <b>FLAP</b> — the programmable token launchpad · flap.sh<br>The dog flies because Flap built the wings.</span>
+    </a>
+
+    <p class="disclaimer">金狗 is a memecoin launched by its community on flap.sh. It has no
+    roadmap, no team allocation and no promises beyond its contract. Gold airdrops are a
+    function of trading volume, not a yield guarantee. This page is lore, not financial
+    advice. The dog accepts no liability. 狗不理.</p>
+
+    <div class="kennel" aria-hidden="true">
+      <svg><use href="#orn-dog"/></svg>
+      <svg class="yb"><use href="#orn-yuanbao"/></svg>
+      <svg><use href="#orn-dog"/></svg>
+      <svg class="gold"><use href="#orn-dog"/></svg>
+      <svg class="yb"><use href="#orn-yuanbao-jin"/></svg>
+      <svg><use href="#orn-dog"/></svg>
+      <svg class="yb"><use href="#orn-yuanbao"/></svg>
+      <svg><use href="#orn-dog"/></svg>
+    </div>
+
+    <div class="colophon">
+      <span>金狗 — THE GOLDEN DOG · Nº 001</span>
+      <span>SET IN FRAUNCES &amp; NOTO SERIF SC · RED &amp; GOLD EDITION · PRINTED ON BNB CHAIN</span>
+      <span>MMXXVI</span>
+    </div>
+  </footer>
+
+</div>
+
+<div class="ca-fab" role="region" aria-label="Contract address">
+  <span class="addr">CA · 0xB5e2…7777</span>
+  <button onclick="copyCA(this)">Copy CA</button>
+</div>
+
+<script>
+function copyCA(btn){
+  navigator.clipboard.writeText("0xB5e29D5aBefc2EDE88D17d161D5B840174497777").then(function(){
+    var t = btn.textContent;
+    btn.textContent = "COPIED ✓";
+    setTimeout(function(){ btn.textContent = t; }, 1600);
+  });
+}
+</script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
+<script src="app.js" defer></script>
+<script src="vault.js" defer></script>
+<script src="alltime.js" defer></script>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module" src="coin.js"></script>
+</body>
+</html>
