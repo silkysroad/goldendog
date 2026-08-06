@@ -6,3 +6,7 @@ _slice_*.png
 _chart*.mjs
 _desk*.mjs
 _cv_*.png
+
+_x_login*.mjs
+.x-credentials
+.x-chrome/
