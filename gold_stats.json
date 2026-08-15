@@ -1,12 +1,12 @@
 {
  "gen": 112630500,
- "asOfBlock": 116096055,
- "asOfTs": 1786803943,
- "outOz": 4.05997,
- "outCount": 3791,
- "wallets": 1133,
- "inOz": 4.491881,
- "inCount": 300,
+ "asOfBlock": 116112071,
+ "asOfTs": 1786811151,
+ "outOz": 4.083523,
+ "outCount": 3809,
+ "wallets": 1136,
+ "inOz": 4.531685,
+ "inCount": 302,
  "biggestOz": 0.007232,
  "biggestTx": "0x66c452b736356ad9b559d2e2517c648152aa63219b03f2cbabb57791f3d275ae"
 }
